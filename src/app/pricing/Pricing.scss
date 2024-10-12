@@ -1,0 +1,37 @@
+@import "../_globals.scss";
+
+.pricing{
+
+
+  .header{
+    text-align: center;
+  }
+
+  .for_download{
+    a{
+      font-weight: bold;
+
+      color: $accent-color;
+      text-decoration: none;
+    }
+  }
+
+  .basic-table{
+    table{
+      width: 100%;
+      text-align: center;
+    }
+
+  }
+
+  .many-rows-table{
+    table{
+      width: 100%;
+      text-align: left;
+
+      th{
+        text-align: left;
+      }
+    }
+  }
+}

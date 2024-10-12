@@ -1,0 +1,100 @@
+@import "../_globals";
+
+.catalog{
+
+
+  .header{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: $accent-color;
+  }
+
+  .categories_container{
+    display: flex;
+
+    ul{
+      list-style: none;
+      padding: 0;
+    }
+
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .categories{
+      width: 200px;
+
+      margin-left: -10px;
+      padding-right: 20px;
+      border-right: 1px solid $accent-color;
+
+      ul{
+        li{
+          position: relative;
+          text-align: center;
+          color: $accent-color;
+          font-weight:500;
+
+          &:not(:last-child){
+            margin-bottom: 40px;
+          }
+          span{
+            text-transform: uppercase;
+          }
+
+          &:after{
+            content: '';
+
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,0);
+            display: block;
+            width: 50%;
+            height: 1px;
+            background-image: url("../../../public/divider_catalog.svg");
+            background-position: top center;
+
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .subcategories-container{
+      display: flex;
+
+      justify-content: center;
+      width: 100%;
+
+      .subcategories{
+        display: grid;
+        /* Будет создано 3 колонки */
+        grid-template-columns: 200px 200px 200px;
+        grid-gap: 10px 5svw;
+        /* Будет создано 3 ряда */
+        grid-template-rows: max-content max-content max-content;
+
+        h2{
+          margin-top: 0;
+
+          font-weight: 500;
+          font-size: 1.25em;
+        }
+
+        ul{
+          li{
+            font-weight: 400;
+            font-size: 1em;
+
+            &:not(:last-child){
+              margin-bottom: 15px;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}
