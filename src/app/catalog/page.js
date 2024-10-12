@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container} from "@mui/material";
+
 import Link from 'next/link'
 
 import './Catalog.scss';
@@ -7,7 +7,7 @@ import './Catalog.scss';
 export default function Page() {
     return (
         <div className="catalog">
-            <Container maxWidth="xl">
+            <div className="container">
                 <div className="pagination">
                     //TODO делать пагинацию
                 </div>
@@ -323,7 +323,7 @@ export default function Page() {
                     </div>
                 </div>
 
-            </Container>
+            </div>
         </div>
     )
 }

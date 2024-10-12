@@ -1,5 +1,4 @@
 import { BASE_URL } from "../../../../config";
-import { Container } from "@mui/material";
 import Link from "next/link";
 
 // Получаем продукты по slug категории
@@ -41,7 +40,7 @@ export default async function Page({ params, searchParams }) {
 
     return (
         <section id="categoryProducts">
-            <Container maxWidth="xl">
+            <div className="container">
                 {/* Название категории */}
                 <h1>{category.name}</h1>
 
@@ -77,7 +76,7 @@ export default async function Page({ params, searchParams }) {
                         </div>
                     ))}
                 </div>
-            </Container>
+            </div>
         </section>
     );
 }
