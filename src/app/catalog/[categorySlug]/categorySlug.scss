@@ -1,0 +1,143 @@
+@import "../../_globals";
+
+#categoryProducts {
+  .container {
+    padding-left: 96px;
+    padding-right: 96px;
+
+    .catalog-and-category{
+      display: flex;
+      align-items: center;
+      height: 68px;
+
+      h1{
+        font-size: 48px;
+
+        font-weight: 600;
+        font-family: $main-font;
+        color: $accent-color;
+
+
+        margin-top: -10px;
+        margin-left: 18px;
+      }
+    }
+
+    .catalog-link{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $accent-color;
+
+      width: 106px;
+      height: 30px;
+
+      border-radius: 6px;
+
+      p{
+        margin: 0;
+
+        margin-left: 9px;
+
+        margin-top: -3px;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        color: $text-color;
+      }
+    }
+
+    .subcategories {
+      display: flex;
+      .subcategory {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 196px;
+        height: 44px;
+
+        color: $accent-color;
+        background-color: white;
+        border: 1px solid $accent-color;
+
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 21px;
+
+        border-radius: 10px;
+
+        &:not(:last-child) {
+          margin-right: 23px;
+        }
+      }
+    }
+
+    .products{
+      display: grid;
+      grid-template-columns: repeat(4, 300px);
+      grid-auto-rows: minmax(400px, auto);
+      grid-row-gap: 100px;
+      width: 100%;
+      padding-left: 47px;
+      padding-right: 47px;
+      justify-content: space-between;
+
+      .product{
+        color: $accent-color;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; // Позволяет распределить элементы по вертикали
+
+        border: 2px solid $accent-color;
+        border-radius: 10px;
+
+        padding-top: 40px;
+
+        .image-slider{
+          img{
+            object-fit: cover;
+          }
+        }
+
+        .price{
+          font-size: 32px;
+          font-weight: 400;
+          font-family: $main-font;
+
+          border-bottom: 2px solid $accent-color;
+
+          margin-top: 25px;
+        }
+
+        .name{
+          font-size: 15px;
+          font-weight: 400;
+          font-family: $main-font;
+          color: black;
+
+          margin-top: 5px;
+          margin-bottom: 10px;
+
+          text-align: center;
+          width: 90%;
+        }
+
+        .line{
+          width: 100%;
+          margin-top: auto;
+          margin-bottom: 10px;
+        }
+
+        .cart-icon {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

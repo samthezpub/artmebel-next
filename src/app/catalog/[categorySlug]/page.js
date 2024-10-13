@@ -1,5 +1,7 @@
-import { BASE_URL } from "../../../../config";
+import {BASE_URL} from "../../../../config";
 import Link from "next/link";
+import './categorySlug.scss'
+import Image from "next/image";
 
 // Получаем продукты по slug категории
 async function getProductsByCategorySlug(categorySlug) {
@@ -28,7 +30,7 @@ function sortProducts(products, sortType) {
     }
 }
 
-export default async function Page({ params, searchParams }) {
+export default async function Page({params, searchParams}) {
     const category = await getCategoryByCategorySlug(params.categorySlug);
     let products = await getProductsByCategorySlug(params.categorySlug);
 
@@ -42,14 +44,20 @@ export default async function Page({ params, searchParams }) {
         <section id="categoryProducts">
             <div className="container">
                 {/* Название категории */}
-                <h1>{category.name}</h1>
+                <div className="catalog-and-category">
+                    <div className="catalog-link">
+                        <Image src="/catalog/categorySlug/catalog-link.png" width="25" height="20"
+                               alt="Открыть каталог"/>
+                        <p>Каталог</p>
+                    </div>
+                    <h1>{category.name}</h1>
+                </div>
 
                 {/* Подкатегории */}
-                <div>
+                <div className="subcategories">
                     {category.subCategories.map((subcategory) => (
-                        <div className="subcategory" key={subcategory.slug}>
-                            <Link href={`/catalog/${subcategory.slug}`}>{subcategory.name}</Link>
-                        </div>
+                        <Link href={`/catalog/${subcategory.slug}`} key={subcategory.slug}
+                              className={"subcategory"}>{subcategory.name}</Link>
                     ))}
                 </div>
 
@@ -62,17 +70,24 @@ export default async function Page({ params, searchParams }) {
                         <option value="priceDesc">Цена (по убыванию)</option>
                         <option value="nameAsc">Название (по алфавиту)</option>
                     </select>
-                    <button type="submit">Применить</button> {/* Кнопка для отправки формы */}
+                    <button type="submit">Применить</button>
+                    {/* Кнопка для отправки формы */}
                 </form>
 
 
                 {/* Отображение товаров */}
-                <div>
+                <div className="products">
                     {products.map((product) => (
-                        <div key={product.id}>
-                            <h3>{product.name}</h3>
-                            <p>{product.description}</p>
-                            <p>{product.price} ₽</p>
+                        <div className="product" key={product.id}>
+                            <div className="image-slider">
+                                <Image src={"/catalog/categorySlug/tumbaumba.jpg"} width={170} height={183}/>
+                            </div>
+                            <p className="price">{product.price} ₽</p>
+                            <h3 className="name">{product.name}</h3>
+
+                            <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>
+
+                            <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}/>
                         </div>
                     ))}
                 </div>
