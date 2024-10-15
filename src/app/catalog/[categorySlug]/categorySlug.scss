@@ -5,12 +5,14 @@
     padding-left: 96px;
     padding-right: 96px;
 
-    .catalog-and-category{
+    .catalog-and-category {
       display: flex;
       align-items: center;
       height: 68px;
 
-      h1{
+      margin-bottom: 70px;
+
+      h1 {
         font-size: 48px;
 
         font-weight: 600;
@@ -23,7 +25,7 @@
       }
     }
 
-    .catalog-link{
+    .catalog-link {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +37,7 @@
 
       border-radius: 6px;
 
-      p{
+      p {
         margin: 0;
 
         margin-left: 9px;
@@ -51,6 +53,9 @@
 
     .subcategories {
       display: flex;
+
+      margin-bottom: 47px;
+
       .subcategory {
         display: flex;
         align-items: center;
@@ -76,7 +81,72 @@
       }
     }
 
-    .products{
+    .sort {
+      margin-bottom: 48px;
+
+      label {
+        font-family: $main-font;
+        font-size: 15px;
+        font-weight: 600;
+        color: $accent-color;
+      }
+
+      select {
+        width: 200px;
+        height: max-content;
+
+        border-radius: 10px;
+        background-color: white;
+        color: $accent-color;
+        font-family: $main-font;
+        font-size: 15px;
+        font-weight: 600;
+
+        margin-left: 13px;
+
+      }
+    }
+
+    .filters {
+      display: flex;
+
+      margin-bottom: 115px;
+
+      .filter {
+        h3 {
+          color: $accent-color;
+          font-family: $main-font;
+          text-transform: capitalize;
+          font-size: 15px;
+          font-weight: 600;
+        }
+
+        select {
+          border-radius: 10px;
+          color: $accent-color;
+          background-color: white;
+
+          font-family: $main-font;
+          text-transform: capitalize;
+          font-size: 15px;
+          font-weight: 600;
+
+          width: 166px;
+          height: 26px;
+
+          option {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 33px;
+        }
+      }
+    }
+
+    .products {
       display: grid;
       grid-template-columns: repeat(4, 300px);
       grid-auto-rows: minmax(400px, auto);
@@ -86,7 +156,8 @@
       padding-right: 47px;
       justify-content: space-between;
 
-      .product{
+      .product {
+        position: relative;
         color: $accent-color;
         height: auto;
         display: flex;
@@ -99,13 +170,39 @@
 
         padding-top: 40px;
 
-        .image-slider{
-          img{
+        .heart-container {
+
+          img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            cursor: pointer;
+
+            transition: 0.5s filter, 0.5s opacity;
+
+          }
+
+          .like-filled {
+            opacity: 0; /* Изначально скрыта красная иконка */
+          }
+
+          &:hover .like-filled {
+            opacity: 1; /* Появляется красная иконка при наведении */
+          }
+
+          &:hover .heart-outline {
+            opacity: 0; /* Исчезает контурная иконка при наведении */
+          }
+        }
+
+        .image-slider {
+          img {
             object-fit: cover;
           }
         }
 
-        .price{
+        .price {
           font-size: 32px;
           font-weight: 400;
           font-family: $main-font;
@@ -115,7 +212,7 @@
           margin-top: 25px;
         }
 
-        .name{
+        .name {
           font-size: 15px;
           font-weight: 400;
           font-family: $main-font;
@@ -128,7 +225,7 @@
           width: 90%;
         }
 
-        .line{
+        .line {
           width: 100%;
           margin-top: auto;
           margin-bottom: 10px;

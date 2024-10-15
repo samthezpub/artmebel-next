@@ -2,6 +2,7 @@ import {BASE_URL} from "../../../../config";
 import Link from "next/link";
 import './categorySlug.scss'
 import Image from "next/image";
+import FiltersComponent from "../../../Components/FiltersComponent";
 
 // Получаем продукты по slug категории
 async function getProductsByCategorySlug(categorySlug) {
@@ -34,11 +35,13 @@ export default async function Page({params, searchParams}) {
     const category = await getCategoryByCategorySlug(params.categorySlug);
     let products = await getProductsByCategorySlug(params.categorySlug);
 
+
     // Получаем параметр сортировки из URL (GET параметр)
     const sortType = searchParams.sort || "default";
 
     // Применяем сортировку на сервере
     products = sortProducts(products, sortType);
+
 
     return (
         <section id="categoryProducts">
@@ -61,24 +64,34 @@ export default async function Page({params, searchParams}) {
                     ))}
                 </div>
 
-                {/* Форма для сортировки */}
-                <form method="GET" action={`/catalog/${params.categorySlug}`}>
-                    <label htmlFor="sort">Сортировать по:</label>
-                    <select id="sort" name="sort" defaultValue={sortType}>
-                        <option value="default">Без сортировки</option>
-                        <option value="priceAsc">Цена (по возрастанию)</option>
-                        <option value="priceDesc">Цена (по убыванию)</option>
-                        <option value="nameAsc">Название (по алфавиту)</option>
-                    </select>
-                    <button type="submit">Применить</button>
-                    {/* Кнопка для отправки формы */}
-                </form>
+                <div className="sort">
+                    {/* Форма для сортировки */}
+                    <form method="GET" action={`/catalog/${params.categorySlug}`}>
+                        <label htmlFor="sort">Сортировать по:</label>
+                        <select id="sort" name="sort" defaultValue={sortType}>
+                            <option value="default">Без сортировки</option>
+                            <option value="priceAsc">по возрастанию цены</option>
+                            <option value="priceDesc">по убыванию цены</option>
+                            <option value="nameAsc">по названию</option>
+                        </select>
+                        <button type="submit">Применить</button>
+                        {/* Кнопка для отправки формы */}
+                    </form>
+                </div>
+
+                <FiltersComponent filters={category.filters}></FiltersComponent>
 
 
                 {/* Отображение товаров */}
                 <div className="products">
                     {products.map((product) => (
                         <div className="product" key={product.id}>
+                            <div className="heart-container">
+                                <Image className="heart-outline" src={"/catalog/categorySlug/like.svg"}
+                                       alt={"Добавить в избранное"} width={40} height={40}/>
+                                <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
+                                       alt={"Добавить в избранное"} width={40} height={40}/>
+                            </div>
                             <div className="image-slider">
                                 <Image src={"/catalog/categorySlug/tumbaumba.jpg"} width={170} height={183}/>
                             </div>
