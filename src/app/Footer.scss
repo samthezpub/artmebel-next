@@ -2,6 +2,8 @@
 
 footer{
   background-color: $accent-color;
+  padding-right: 50px;
+  padding-left: 96px;
 }
 footer .footer-container {
   position: relative;
@@ -19,6 +21,8 @@ footer .footer-container {
   }
 
   .social-media{
+    margin-bottom: 32px;
+
     p{
       font-weight: 600;
       text-align: center;
@@ -52,9 +56,11 @@ footer .footer-container {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     p{
       font-weight: 600;
+      margin-bottom: 8px;
     }
   }
 
@@ -78,6 +84,11 @@ footer .footer-container {
       margin: 0;
 
       list-style: none;
+
+      li{
+        margin-bottom: 8px;
+
+      }
     }
   }
 
