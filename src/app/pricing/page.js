@@ -2,11 +2,15 @@ import React from 'react'
 
 
 import './Pricing.scss'
+import Link from "next/link";
 
 export default function Pricing() {
     return (
         <div className="pricing">
             <div className="container">
+                <div className="pagination">
+                    <p><Link href="/mainPage">Главная/</Link>Цены</p>
+                </div>
                 <div className="header">
                     <p>Предоставляем услуги по раскрою: ЛДСП, МДФ, фанеры, пластика,<br/>
                         столешниц, кромки ПВХ и других материалов. А также услуги кромления различных материалов и<br/>
