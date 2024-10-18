@@ -1,12 +1,16 @@
 import React from 'react'
 import './makeOrder.scss'
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
     return (
        <>
        <div id="makeOrder">
            <div className="container">
+               <div className="pagination">
+                   <p><Link href="/mainPage">Главная/</Link>Оформление заказа</p>
+               </div>
                <h1 className="text">Оформление заказа</h1>
                <div className="leftPart">
                    <form>
@@ -50,7 +54,7 @@ export default function Page() {
                    <div className="checkbox">
                        <input type="checkbox"/>
                        <p>Я ознакомлен с условиями доставки и оплаты, а также согласен с условиями использования моих
-                       персональных данных</p>
+                           персональных данных</p>
                    </div>
                    <div className="button">
                        <button>Оформить заказ</button>

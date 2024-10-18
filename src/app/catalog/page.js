@@ -9,9 +9,8 @@ export default function Page() {
         <div className="catalog">
             <div className="container">
                 <div className="pagination">
-                    //TODO делать пагинацию
+                <p><Link href="/mainPage">Главная/</Link>Категории </p>
                 </div>
-
                 <div className="header">
                     <h1>Каталог</h1>
                 </div>

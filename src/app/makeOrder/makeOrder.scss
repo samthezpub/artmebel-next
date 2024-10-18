@@ -1,6 +1,14 @@
 @import "../_globals.scss";
 
 #makeOrder{
+  .pagination{
+    font-family: $main-font;
+    color: $accent-color;
+    font-size: 16px;
+    margin-bottom: 49px;
+    margin-top: 99px;
+
+  }
 
   .container{
     padding-left: 98px;

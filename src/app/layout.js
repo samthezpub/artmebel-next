@@ -112,6 +112,9 @@ export default function RootLayout({ children }) {
                             <li>Раздвижные системы</li>
                             <li>Кромочные материалы</li>
                             <li>Плитные материалы</li>
+                            <li>Фурнитура для стеклянных<br/>конструкций</li>
+                            <li>Фасады</li>
+                            <li>Услуги</li>
                         </ul>
                     </div>
 
