@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FiltersComponent from "./FiltersComponent";
 
-// Функция для сортировки товаров
 function sortProducts(products, sortType) {
     if (sortType === "priceAsc") {
         return [...products].sort((a, b) => a.price - b.price);
@@ -13,25 +12,38 @@ function sortProducts(products, sortType) {
     } else if (sortType === "nameAsc") {
         return [...products].sort((a, b) => a.name.localeCompare(b.name));
     } else {
-        return products; // По умолчанию возвращаем без сортировки
+        return products; // Без сортировки
     }
 }
 
 const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
     const [products, setProducts] = useState(initialProducts);
     const [sortType, setSortType] = useState("default");
-    const [activeFilters, setActiveFilters] = useState([]); // Состояние для активных фильтров
+    const [activeFilters, setActiveFilters] = useState([]);
 
-    // Функция для обработки изменения сортировки
+    const addToCart = (productId) => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (!Array.isArray(cart)) {
+            cart = [];
+        }
+
+        if (!cart.includes(productId)) {
+            cart.push(productId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`Товар добавлен в корзину!`);
+        } else {
+            alert(`Товар уже в корзине.`);
+        }
+    };
+
     const handleSortChange = (e) => {
         const selectedSortType = e.target.value;
         setSortType(selectedSortType);
         setProducts(sortProducts(products, selectedSortType));
     };
 
-    // Функция для обработки изменения фильтров
     const handleFilterChange = (filterId, value) => {
-        const updatedFilters = activeFilters.filter(filter => filter.filterId !== filterId);
+        const updatedFilters = activeFilters.filter((filter) => filter.filterId !== filterId);
 
         if (value) {
             updatedFilters.push({ filterId, value });
@@ -39,13 +51,12 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
 
         setActiveFilters(updatedFilters);
 
-        // Обновляем список продуктов в соответствии с активными фильтрами
-        const filteredProducts = initialProducts.filter(product => {
-            return updatedFilters.every(filter => {
-                // Логика фильтрации
-                return product.productFilters.some(productFilter =>
-                    productFilter.filter.id === filter.filterId &&
-                    productFilter.value === filter.value
+        const filteredProducts = initialProducts.filter((product) => {
+            return updatedFilters.every((filter) => {
+                return product.productFilters.some(
+                    (productFilter) =>
+                        productFilter.filter.id === filter.filterId &&
+                        productFilter.value === filter.value
                 );
             });
         });
@@ -67,7 +78,6 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
 
             <FiltersComponent filters={filters} onFilterChange={handleFilterChange} />
 
-            {/* Отображение товаров */}
             <div className="products">
                 {products.map((product) => (
                     <div className="product" key={product.id}>
@@ -83,7 +93,8 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
                         <p className="price">{product.price} ₽</p>
                         <h3 className="name">{product.name}</h3>
                         <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} />
-                        <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36} />
+                        <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}
+                               onClick={() => addToCart(product.id)} />
                     </div>
                 ))}
             </div>

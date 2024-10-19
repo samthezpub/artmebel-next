@@ -4,7 +4,16 @@ import Link from 'next/link'
 
 import './Catalog.scss';
 
-export default function Page() {
+import {BASE_URL} from "../../../config";
+
+async function getSuperCategories() {
+    return await fetch(`${BASE_URL}/api/v1/supercategory/getAll`).then(res => res.json())
+}
+
+export default async function Page() {
+
+    let superCategories = await getSuperCategories();
+
     return (
         <div className="catalog">
             <div className="container">
@@ -18,306 +27,38 @@ export default function Page() {
                 <div className="categories_container">
                     <div className="categories">
                         <ul>
-                            <li>
-                                <Link href="#">
-                                    <span>МЕБЕЛЬНАЯ ФУРНИТУРА</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>ТЕХНИКА И САНТЕХНИКА</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>РАЗДВИЖНЫЕ СИСТЕМЫ</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>КРОМОЧНЫЕ МАТЕРИАЛЫ</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>ИЗДЕЛИЯ ИЗ СТЕКЛА</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>ПЛИТНЫЕ МАТЕРИАЛЫ</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>ФУРНИТУРА ДЛЯ СТЕКЛЯННЫХ КОНСТРУКЦИЙ</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>ФАСАДЫ</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#">
-                                    <span>УСЛУГИ</span>
-                                </Link>
-                            </li>
+                            {superCategories.map(category => (
+                                <li>
+                                    <Link href="#" key={category.id}>
+                                        <span>{category.name}</span>
+                                    </Link>
+                                </li>
+                            ))}
+
+
                         </ul>
                     </div>
 
                     <div className="subcategories-container">
                         <div className="subcategories">
-                            <div className="subcategory">
-                                <Link href="/catalog/stulya">
-                                    <h2>Фурнита алибабы и прочее</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
+                            {superCategories[0].categories.map(category => (
+                                <div className="subcategory">
+                                    <Link href={`/catalog/${category.slug}`}>
+                                        <h2>{category.name}</h2>
+                                    </Link>
+                                    <ul>
+                                        {category.subCategories.map(subCategory => (
+                                            <li>
+                                                <Link href={`/catalog/${subCategory.slug}`}>
+                                                    <span>{subCategory.name}</span>
+                                                </Link>
+                                            </li>
+                                        ))}
 
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="subcategory">
-                                <Link href="#">
-                                    <h2>Столешницы</h2>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <span>Турутуту</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+                                    </ul>
+                                </div>
+                            ))}
+
                         </div>
                     </div>
                 </div>
