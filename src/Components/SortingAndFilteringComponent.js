@@ -36,6 +36,21 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
         }
     };
 
+    const addToFavorite = (productId) => {
+        let favorite = JSON.parse(localStorage.getItem("favorite")) || [];
+        if (!Array.isArray(favorite)) {
+            favorite = [];
+        }
+
+        if (!favorite.includes(productId)) {
+            favorite.push(productId);
+            localStorage.setItem("favorite", JSON.stringify(favorite));
+            alert(`Товар добавлен в избранное!`);
+        } else {
+            alert(`Товар уже в избранном.`);
+        }
+    };
+
     const handleSortChange = (e) => {
         const selectedSortType = e.target.value;
         setSortType(selectedSortType);
@@ -81,7 +96,7 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
             <div className="products">
                 {products.map((product) => (
                     <div className="product" key={product.id}>
-                        <div className="heart-container">
+                        <div className="heart-container" onClick={()=> addToFavorite(product.id)}>
                             <Image className="heart-outline" src={"/catalog/categorySlug/like.svg"}
                                    alt={"Добавить в избранное"} width={40} height={40} />
                             <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
