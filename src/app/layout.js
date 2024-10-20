@@ -3,6 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import './Footer.scss'
+import SearchProducts from "../Components/SearchProducts";
 
 
 export default function RootLayout({ children }) {
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
             <div className="firstContainer">
                 <Image src="/mainPage/logo 2.svg" alt="logo" width="241" height="124" className="logo"/>
                 <form>
-                    <input></input>
+                    <SearchProducts/>
                 </form>
                 <div className="icon">
                     <Link href="/">

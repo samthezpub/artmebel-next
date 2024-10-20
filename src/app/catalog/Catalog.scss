@@ -35,6 +35,9 @@
       padding-right: 20px;
       border-right: 1px solid $accent-color;
 
+      .supercategory{
+        cursor: pointer;
+      }
       ul{
         li{
           position: relative;

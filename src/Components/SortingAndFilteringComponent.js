@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import FiltersComponent from "./FiltersComponent";
+import ProductImageSlider from "../Components/ProductImageSlider";
 
 function sortProducts(products, sortType) {
     if (sortType === "priceAsc") {
@@ -79,6 +80,10 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
         setProducts(filteredProducts);
     };
 
+    useEffect(() => {
+        console.log(initialProducts)
+    }, []);
+
     return (
         <div>
             <div className="sort">
@@ -102,9 +107,9 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
                             <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
                                    alt={"Добавить в избранное"} width={40} height={40} />
                         </div>
-                        <div className="image-slider">
-                            <Image src={"/catalog/categorySlug/tumbaumba.jpg"} width={170} height={183} />
-                        </div>
+
+                        <ProductImageSlider productId={product.id} imagesCount={product.photosCount}></ProductImageSlider>
+
                         <p className="price">{product.price} ₽</p>
                         <h3 className="name">{product.name}</h3>
                         <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} />
