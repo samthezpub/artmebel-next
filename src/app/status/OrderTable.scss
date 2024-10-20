@@ -1,0 +1,19 @@
+@import "../_globals.scss";
+
+.table {
+  width: 958px;
+  border: 1px solid #d5cece;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: $main-font;
+}
+.table th {
+  font-weight: bold;
+  padding: 5px;
+
+  border: 1px solid #d5cece;
+}
+.table td {
+  border: 1px solid #d5cece;
+  padding: 5px;
+}

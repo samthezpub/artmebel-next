@@ -6,6 +6,9 @@ footer{
   padding-left: 96px;
 
 }
+.footer-mobile{
+  display: none;
+}
 footer .footer-container {
   position: relative;
 
@@ -122,4 +125,145 @@ footer .footer-container {
       }
     }
   }
+}
+
+@media screen and (max-width: 1020px){
+  footer{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer .footer-container{
+      display: none;
+    }
+#mobile {
+
+  .footer-mobile {
+    display: block;
+  }
+
+  .container {
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #656565;
+    align-items: center;
+    padding-bottom: 31px;
+  }
+
+  .forForm {
+      margin-bottom: 32px;
+
+    input {
+      width: 90vw;
+      height: 33px;
+      border-radius: 6px;
+      border: 1px solid white;
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+
+      &::placeholder{
+        color: white;
+      }
+    }
+  }
+
+  .Line1 {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    margin-bottom: 17px;
+
+    p {
+      font-family: $main-font;
+      color: #C1C1C1;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
+  .text{
+    margin-bottom: 32px;
+  }
+  .Line2 {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+
+    p {
+      font-family: $main-font;
+      color: #C1C1C1;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
+
+  .contacts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+  }
+  .phone{
+
+   margin-bottom: 16px;
+    h1{
+      font-family: $main-font;
+      color: white ;
+      font-size: 32px;
+    }
+    p{
+      font-family: $main-font;
+      color: #C1C1C1 ;
+      font-size: 15px;
+    }
+  }
+
+  .day{
+    margin-bottom: 16px;
+    p{
+      font-family: $main-font;
+      color: white ;
+      font-size: 15px;
+    }
+  }
+  .map{
+  margin-bottom: 32px;
+    iframe{
+      width: 90vw;
+
+    }
+  }
+  .description{
+    width: 90vw;
+    margin-bottom: 32px;
+    p{
+      font-family: $main-font;
+      color: #C1C1C1;
+      text-align: center;
+    }
+  }
+
+  .social-media{
+    margin-bottom: 32px;
+  }
+
+  .lastContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: #C1C1C1;
+  }
+  .partners{
+    margin-bottom: 16px;
+  }
+  .INN{
+      margin-bottom: 16px;
+  }
+}
+
 }

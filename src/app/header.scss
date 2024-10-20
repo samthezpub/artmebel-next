@@ -28,8 +28,14 @@
       border-radius: 6px;
     }
   }
+  .burger{
+    display: none;
+  }
   .logo{
     margin-bottom: 10px;
+  }
+  .icon2{
+    display: none;
   }
 
 
@@ -103,4 +109,64 @@
     border-radius: 60px;
     background-color: #D9D9D9;
   }
+}
+
+@media screen and (max-width: 1020px){
+
+  #header{
+
+    .container{
+      width: 100vw;
+      flex-direction: column;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: center;
+    }
+    .burger{
+      display: block;
+    }
+    .logo{
+      justify-content: center;
+        width: 155px;
+        height: 80px;
+
+    }
+
+    .firstContainer{
+
+      input{
+        width: 90vw;
+      }
+    }
+
+    .icon{
+      display: none;
+    }
+
+    .forMobile{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .icon2{
+      display: flex;
+      justify-content: space-between;
+
+    }
+    .shop{
+      margin-right: 10px;
+    }
+
+    .secondContainer{
+      display: none;
+    }
+
+    .thirdContainer{
+      display: none;
+    }
+
+  }
+
 }

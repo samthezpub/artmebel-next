@@ -13,7 +13,20 @@ export default function RootLayout({ children }) {
     <div id="header">
         <div className="container">
             <div className="firstContainer">
+                <div className="forMobile">
+                    <div className="burger">
+                        <Image src="/header/burger.svg" width="38" height="24" alt="/" />
+                    </div>
                 <Image src="/mainPage/logo 2.svg" alt="logo" width="241" height="124" className="logo"/>
+                <div className="icon2">
+                    <Link href="/">
+                        <Image src="/header/shop.svg" alt="profile" width="47" height="34" className="shop"/>
+                    </Link>
+                    <Link href="/">
+                        <Image src="/header/favourite.svg" alt="profile" width="47" height="34" href="/"/>
+                    </Link>
+                </div>
+                </div>
                 <form>
                     <SearchProducts/>
                 </form>
@@ -34,7 +47,9 @@ export default function RootLayout({ children }) {
                 <div className="firstLine">
                     <h1>КАТАЛОГ</h1>
                     <h1>ДОСТАВКА И <br/> ОПЛАТА </h1>
-                    <h1>СТАТУС ПРОИЗВОДСТВЕННОГО <br/> ЗАКАЗА</h1>
+                    <Link href="./status">
+                        <h1>СТАТУС ПРОИЗВОДСТВЕННОГО <br/> ЗАКАЗА</h1>
+                    </Link>
                     <h1>О КОМПАНИИ</h1>
                     <h1>КОНТАКТЫ</h1>
                 </div>
@@ -66,7 +81,7 @@ export default function RootLayout({ children }) {
     </div>
     {children}
     <footer>
-        <div >
+        <div>
             <div className="footer-container">
                 <div className="info">
                     <Link href="/">
@@ -170,7 +185,69 @@ export default function RootLayout({ children }) {
                     </div>
                 </div>
             </div>
+            <div id="mobile">
+            <div className="footer-mobile">
+                <div className="container">
+                    <div className="logo">
+                        <Image src="/mainPage/logo 2.svg" alt="logo" width="150" height="80" />
+                    </div>
+                    <div className="forForm">
 
+                            <SearchProducts/>
+
+                    </div>
+                    <div className="text">
+                        <div className="Line1">
+                            <p>Главная</p>
+                            <p>Каталог</p>
+                            <p>Доставка и оплата</p>
+                        </div>
+                        <div className="Line2">
+                            <p>СТАТУС ЗАКАЗА</p>
+                            <p>О КОМПАНИИ</p>
+                            <p>КОНТАКТЫ</p>
+                        </div>
+                    </div>
+                    <div className="contacts">
+                        <div className="phone">
+                            <h1>+7 (949) 000-00-00</h1>
+                            <p>Для звонков по России</p>
+                        </div>
+                        <div className="day">
+                            <p>ПН-СБ – с 09:00 до 17:00</p>
+                            <p>СБ,ВС – Выходные</p>
+                        </div>
+                        <div className="map">
+                            <div>
+                                <iframe
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad618e8cbfcc15e00c78c5cde1ce4b95daa8a59ca30ffce51fc77347308374404&amp;source=constructor"
+                                    width="415" height="200" frameBorder="0" style={{borderRadius: "50px"}}></iframe>
+                            </div>
+                        </div>
+                        <div className="description">
+                            <p>ИП «ArtMebel» использует файлы «cookie», с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.
+                                На информационном ресурсе применяются рекомендательные технологии. При применении информационных технологий предоставления информации осуществляется сбор, систематизация и анализ сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации.</p>
+                        </div>
+                        <div className="social-media">
+                            <Link href="/"><Image src="/footer/vk.png" alt="/" width="48" height="48" style={{marginRight: "32px"}} /></Link>
+                            <Link href="/"><Image src="/footer/tg.png" alt="/" width="48" height="48" /></Link>
+                        </div>
+                    </div>
+                    <div className="lastContainer">
+                    <div className="partners">
+                        <Link href="/"><p>НАШИ ПАРТНЁРЫ</p></Link>
+                    </div>
+                    <div className="INN">
+                        <p>ИНН: 123456789012</p>
+                        <p>ОГРНИП: 123456789012345</p>
+                    </div>
+                    <div className="IP">
+                        <p>© ИП «Art Mebel», 2024</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
     </footer>
     </body>

@@ -1,0 +1,30 @@
+@import "../_globals.scss";
+
+#status{
+
+  .container{
+    padding-left: 86px;
+  }
+
+  .pagination{
+    font-family: $main-font;
+    color: $accent-color;
+    font-size: 18px;
+    margin-bottom: 49px;
+    margin-top: 99px;
+
+    span{
+      font-weight: 600;
+    }
+  }
+
+  .header{
+
+    h1{
+      font-family: $main-font;
+      color: $accent-color;
+      font-size: 48px;
+      font-weight: 600;
+    }
+  }
+}
