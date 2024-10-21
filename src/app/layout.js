@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
     <body>
     <div id="header">
         <div className="container">
+            <div className="forAdapt">
             <div className="firstContainer">
                 <div className="forMobile">
                     <div className="burger">
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
                     </Link>
                 </div>
             </div>
+
             <div className="secondContainer">
                 <div className="firstLine">
                     <h1>КАТАЛОГ</h1>
@@ -73,6 +75,7 @@ export default function RootLayout({ children }) {
                         СИСТЕМЫ</h1></div>
                     <div className="div8"><h1>УСЛУГИ</h1></div>
                 </div>
+            </div>
             </div>
             <div className="thirdContainer">
 

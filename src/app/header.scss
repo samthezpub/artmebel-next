@@ -14,6 +14,11 @@
     padding-top: 30px;
     padding-right: 50px;
   }
+  .forAdapt{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
 
   .firstContainer{
     display: flex;
@@ -111,7 +116,28 @@
   }
 }
 
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1562px){
+  #header{
+
+    .container{
+      flex-direction: column;
+    }
+    .forAdapt{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 100px;
+      width: 100%;
+    }
+    .thirdContainer{
+      width: 100%;
+      margin-top: 25px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1150px){
 
   #header{
 
@@ -121,6 +147,11 @@
       padding-left: 0;
       padding-right: 0;
       justify-content: center;
+
+    }
+    .forAdapt{
+      padding-right: 0;
+     justify-content: center;
     }
     .burger{
       display: block;
