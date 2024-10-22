@@ -1,0 +1,77 @@
+@import "../../_globals.scss";
+
+#admin{
+
+  .container{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 15px;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product{
+    width: 100%;
+    height: 125px;
+    background-color: #C1C1C1;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .picture{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+  }
+
+  .name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+    color: black;
+    font-size: 20px;
+
+  }
+  .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+    color: black;
+    font-size: 20px;
+
+  }
+  .category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+    color: black;
+    font-size: 20px;
+
+  }
+  .subcategory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+    color: black;
+    font-size: 20px;
+
+  }
+
+  .ForAddition{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+
+}
