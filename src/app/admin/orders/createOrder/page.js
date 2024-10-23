@@ -2,6 +2,7 @@
 import React, {useState} from 'react'
 import './createOrder.scss'
 import Link from "next/link";
+import {BASE_URL} from "../../../../../config";
 
 export default function Page() {
     const [Success, setSuccess] = useState(false)
@@ -21,7 +22,7 @@ export default function Page() {
             return;
         }
 
-        fetch('http://localhost:8080/api/v1/orders/create', {
+        fetch(`${BASE_URL}/api/v1/orders/create`, {
             headers: {
                 'Content-Type': 'application/json',
             },

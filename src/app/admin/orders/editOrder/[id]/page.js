@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './createOrder.scss';
 import Link from "next/link";
+import {BASE_URL} from "../../../../../../config";
 
 export default function Page({ params }) {
     const [order, setOrder] = useState(null);
@@ -13,7 +14,7 @@ export default function Page({ params }) {
         const fetchOrder = async () => {
             if (id) {
                 try {
-                    const res = await fetch(`http://localhost:8080/api/v1/orders/get/${id}`);
+                    const res = await fetch(`${BASE_URL}/api/v1/orders/get/${id}`);
                     if (res.ok) {
                         const data = await res.json();
                         setOrder(data);
@@ -51,7 +52,7 @@ export default function Page({ params }) {
         }
 
         try {
-            const res = await fetch('http://localhost:8080/api/v1/orders/update', {
+            const res = await fetch(`${BASE_URL}/api/v1/orders/update`, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

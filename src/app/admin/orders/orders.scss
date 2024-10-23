@@ -1,5 +1,21 @@
 @import "../../_globals";
 #orders {
+
+  .sort-buttons{
+    margin-left: 40px;
+
+    button{
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .filter-status{
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+
   .container {
     padding: 30px;
     display: grid;
