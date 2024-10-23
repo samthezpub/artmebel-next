@@ -7,6 +7,7 @@ import './ProductImageSlider.scss';
 export default function ProductImageSlider({ productId, imagesCount }) {
     const [currentImage, setCurrentImage] = useState(1);
 
+
     // Функция для перехода на следующее изображение
     const handleNext = () => {
         setCurrentImage((prev) => (prev < imagesCount ? prev + 1 : 1));
