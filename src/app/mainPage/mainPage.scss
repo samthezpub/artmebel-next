@@ -1,6 +1,6 @@
 @import "../_globals.scss";
 
-#mainPage{
+#mainPage{npm run fdev
 
   .center{
     display: flex;
@@ -22,7 +22,7 @@
     position: relative;
     font-family: $main-font;
     padding-right: 63px;
-    background-image: url("/mainPage/bg1.jpg");
+    background-image: url("/mainPage/bg1.svg");
     background-size: cover;
 
     h1{
@@ -84,10 +84,12 @@
   }
   .rightPart{
     width: 53%;
-    background-image: url("/furnitureForOrder/button.jpg");
+    background-image: url("/mainPage/bg2.svg");
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .secondBlock{

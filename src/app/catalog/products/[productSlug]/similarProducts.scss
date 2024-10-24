@@ -99,6 +99,8 @@
       .slider {
         display: flex;
         transition: transform 0.3s ease-in-out;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .product {
@@ -109,7 +111,7 @@
         text-align: center;
         border: 1px solid #ccc;
         border-radius: 8px;
-        margin: 0 10px; // Пробелы между карточками
+        margin: 10px 10px; // Пробелы между карточками
 
         min-height: 300px;
       }

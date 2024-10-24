@@ -21,7 +21,7 @@ export default function Page() {
                             </div>
                         </div>
                         <div className="rightPart">
-                            <Image src="/mainPage/logo 2.svg" width="580" height="310" alt="logo" />
+
                         </div>
                     </div>
                     <div className="secondBlock">
