@@ -95,13 +95,32 @@
       justify-content: space-between;
       align-items: center;
       width: 90vw;
+      height: max-content;
 
 
+      @media screen and (max-width: 1200px){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+      }
+
+      @media screen and (max-width: 600px){
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
 
       h1{
         font-size: 40px;
         font-weight: 300;
+
+        line-height: 48px;
+
+
       }
+
+
 
       .card1{
         width: 375px;
@@ -147,6 +166,21 @@
         cursor: pointer;
         box-shadow: 0 5px 5px -3px black;
       }
+
+      .card{
+        border-radius: 10px;
+
+        @media screen and (max-width: 1700px){
+          height: 345px;
+          width: 250px;
+        }
+        @media screen and (max-width: 1200px) {
+          width: 100%;
+        }
+
+
+
+      }
     }
   }
   .thirdBlock{
@@ -185,6 +219,9 @@
       margin-bottom: 20px;
 
 
+      @media screen and (max-width: 570px){
+        width: 90%;
+      }
     }
 
     .carousel{
@@ -194,6 +231,11 @@
         img{
           width: max-content;
           margin-right: 50px;
+
+          @media screen and (max-width: 860px){
+            width: 360px;
+            height: 200px;
+          }
         }
       }
     }
@@ -218,6 +260,22 @@
       img{
         width: max-content;
         margin-right: 50px;
+
+        @media screen and (max-width: 800px){
+          width: 200px;
+          height: 200px;
+          object-fit: contain;
+
+          margin-right: 25px;
+        }
+
+        @media screen and (max-width: 600px){
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+
+          margin-right: 25px;
+        }
       }
     }
   }
@@ -243,11 +301,17 @@
     .info{
       display: flex;
       justify-content: space-between;
+
+      .social{
+        img{
+          object-fit: cover;
+        }
+      }
     }
     .telephone{
       display: flex;
-      justify-content: start;
-      align-items: start;
+      justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: column;
 
       p{

@@ -33,26 +33,26 @@ export default function Page() {
                     <div className="secondBlock">
                         <h1>ПРЕИМУЩЕСТВА</h1>
                         <div className="cards">
-                            <div className="card1">
+                            <div className="card1 card">
                                 <h1>Быстрая доставка</h1>
                                 <Image src="/mainPage/car.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="card2">
+                            <div className="card2 card">
                                 <h1>Скидки и акции</h1>
                                 <Image src="/mainPage/percent.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="card3">
+                            <div className="card3 card">
                                 <h1>Удобный самовывоз</h1>
                                 <Image src="/mainPage/map.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="card4">
+                            <div className="card4 card">
                                 <h1>Широкий выбор</h1>
                                 <Image src="/mainPage/bag.png" alt="delivery" width="200" height="200" />
                             </div>
                         </div>
                     </div>
                     <div className="thirdBlock">
-                        <h1>ПРИМЕРЫ НАШИХ РАБОТ НА ЗАКАЗ</h1>
+                        <h1>ПРИМЕРЫ РАБОТ НА ЗАКАЗ</h1>
                         <div className="carousel">
                             <RunString dir={"mainPage/mebel"} length={3} width={591} height={480}></RunString>
                         </div>
@@ -72,8 +72,8 @@ export default function Page() {
                             <p>ПН-ПТ – 09:00 до 17:00</p>
                             <p>СБ,ВС – Выходные</p>
                             <div className="social">
-                                <Link href="/"><Image src="/footer/vk.png" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
-                                <Link href="/"><Image src="/footer/tg.png" alt="/" width="80" height="80" /></Link>
+                                <Link href="/"><Image src="/mainPage/vk.svg" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
+                                <Link href="/"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80" /></Link>
                             </div>
                         </div>
                         <div className="map">
