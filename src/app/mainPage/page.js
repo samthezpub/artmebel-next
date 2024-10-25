@@ -3,6 +3,7 @@ import './mainPage.scss'
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import RunString from "@/Components/RunString";
 
 
 const Carousel = dynamic(() => import('../../Components/Carousel'), { ssr: false })
@@ -52,13 +53,14 @@ export default function Page() {
                     </div>
                     <div className="thirdBlock">
                         <h1>ПРИМЕРЫ НАШИХ РАБОТ НА ЗАКАЗ</h1>
-                        {/*<div className="carousel">*/}
-                        {/*    <Carousel></Carousel>*/}
-                        {/*</div>*/}
+                        <div className="carousel">
+                            <RunString dir={"mainPage/mebel"} length={3} width={591} height={480}></RunString>
+                        </div>
                         <button>ЗАКАЗАТЬ</button>
                     </div>
                     <div className="forthBlock">
-                        <h1>БЕГУЩАЯ СТРОКА ДОЛЖНА БЫТЬ</h1>
+                        <h2>Наши партнеры</h2>
+                        <RunString dir={"mainPage"} length={13} width={460} height={187} />
                     </div>
                     <div className="contacts">
                         <h1>КОНТАКТЫ</h1>
