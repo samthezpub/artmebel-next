@@ -1,6 +1,11 @@
 import React from 'react'
 import './mainPage.scss'
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+
+
+const Carousel = dynamic(() => import('../../Components/Carousel'), { ssr: false })
 
 export default function Page() {
     return (
@@ -9,15 +14,15 @@ export default function Page() {
                 <div className="center">
                     <div className="firstBlock">
                         <div className="leftPart">
-                            <h1>СОЗДАЙ ЛУЧШУЮ МЕБЕЛЬ<br/>
-                                С НАМИ</h1>
+                            <h1>ТОЛЬКО ЛУЧШАЯ МЕБЕЛЬ
+                            </h1>
                             <div className="forButton">
-                            <button className="button1">КАТАЛОГ</button>
-                            <button className="button2">РАСПРОДАЖА</button>
-                            <button className="button3">АКЦИЯ</button>
-                            <button className="button4">НОВИНКИ</button>
-                            <button className="button5">УЦЕНКА</button>
-                            <button className="button6">ХИТ</button>
+                            <button>КАТАЛОГ</button>
+                            <button >РАСПРОДАЖА</button>
+                            <button>АКЦИЯ</button>
+                            <button >НОВИНКИ</button>
+                            <button>УЦЕНКА</button>
+                            <button>ХИТ</button>
                             </div>
                         </div>
                         <div className="rightPart">
@@ -25,34 +30,61 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="secondBlock">
-                        <h1>Наши партнёры</h1>
-                        <Image src="/products/Line.png" width="368" height="1" alt="/" />
-                        <div className="partners">
-                            <div className="firstLine">
-                                <Image src="/mainPage/1.png" alt="korner" width="400" height="229"/>
-                                <Image src="/mainPage/2.png" alt="korner" width="512" height="138"/>
-                                <Image src="/mainPage/3.png" alt="korner" width="378" height="163"/>
-                                <Image src="/mainPage/4.png" alt="korner" width="331" height="198"/>
+                        <h1>ПРЕИМУЩЕСТВА</h1>
+                        <div className="cards">
+                            <div className="card1">
+                                <h1>Быстрая доставка</h1>
+                                <Image src="/mainPage/car.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="secondLine">
-                                <Image src="/mainPage/5.png" alt="korner" width="428" height="158"/>
-                                <Image src="/mainPage/6.png" alt="korner" width="472" height="162"/>
-                                <Image src="/mainPage/7.png" alt="korner" width="680" height="213"/>
+                            <div className="card2">
+                                <h1>Скидки и акции</h1>
+                                <Image src="/mainPage/percent.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="thirdLine">
-                                <Image src="/mainPage/8.png" alt="korner" width="512" height="118"/>
-                                <Image src="/mainPage/9.png" alt="korner" width="512" height="134"/>
-                                <Image src="/mainPage/10.png" alt="korner" width="413" height="173"/>
+                            <div className="card3">
+                                <h1>Удобный самовывоз</h1>
+                                <Image src="/mainPage/map.png" alt="delivery" width="200" height="200" />
                             </div>
-                            <div className="forthLine">
-                                <Image src="/mainPage/11.png" alt="korner" width="432" height="193"/>
-                                <Image src="/mainPage/12.png" alt="korner" width="554" height="189"/>
-                                <Image src="/mainPage/13.png" alt="korner" width="512" height="139"/>
+                            <div className="card4">
+                                <h1>Широкий выбор</h1>
+                                <Image src="/mainPage/bag.png" alt="delivery" width="200" height="200" />
                             </div>
                         </div>
                     </div>
+                    <div className="thirdBlock">
+                        <h1>ПРИМЕРЫ НАШИХ РАБОТ НА ЗАКАЗ</h1>
+                        {/*<div className="carousel">*/}
+                        {/*    <Carousel></Carousel>*/}
+                        {/*</div>*/}
+                        <button>ЗАКАЗАТЬ</button>
+                    </div>
+                    <div className="forthBlock">
+                        <h1>БЕГУЩАЯ СТРОКА ДОЛЖНА БЫТЬ</h1>
+                    </div>
+                    <div className="contacts">
+                        <h1>КОНТАКТЫ</h1>
+                        <div className="info">
+                        <div className="telephone">
+                            <p style={{marginBottom: "20px"}}>г. Мариуполь, ул. Энгельса, 56</p>
+                            <h2 style={{marginBottom: "10px"}}>+7 (949) 000-00-00</h2>
+                            <p style={{marginBottom: "20px", color: "#E3E3E3"}}>Для звонков по России</p>
+                            <p>ПН-ПТ – 09:00 до 17:00</p>
+                            <p>СБ,ВС – Выходные</p>
+                            <div className="social">
+                                <Link href="/"><Image src="/footer/vk.png" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
+                                <Link href="/"><Image src="/footer/tg.png" alt="/" width="80" height="80" /></Link>
+                            </div>
+                        </div>
+                        <div className="map">
+                            <iframe
+                                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad618e8cbfcc15e00c78c5cde1ce4b95daa8a59ca30ffce51fc77347308374404&amp;source=constructor"
+                                width="948" height="433" frameBorder="0" style={{borderRadius: "50px"}}></iframe>
+
+                    </div>
+                        </div>
                 </div>
+
             </div>
-        </>
-    )
+        </div>
+</>
+)
 }
