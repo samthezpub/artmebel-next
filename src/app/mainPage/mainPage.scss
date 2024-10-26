@@ -135,7 +135,7 @@
         align-items: center;
         flex-direction: column;
         background-image: url("/mainPage/background.png");
-
+        background-size: cover;
         box-shadow: 0 5px 5px -3px black;
       }
       .card2{
@@ -146,7 +146,7 @@
         align-items: center;
         flex-direction: column;
         background-image: url("/mainPage/background.png");
-
+        background-size: cover;
         box-shadow: 0 5px 5px -3px black;
       }
       .card3{
@@ -157,7 +157,7 @@
         align-items: center;
         flex-direction: column;
         background-image: url("/mainPage/background.png");
-
+        background-size: cover;
         box-shadow: 0 5px 5px -3px black;
       }
       .card4 {
@@ -168,7 +168,7 @@
         align-items: center;
         flex-direction: column;
         background-image: url("/mainPage/background.png");
-
+        background-size: cover;
         box-shadow: 0 5px 5px -3px black;
       }
 
@@ -338,25 +338,43 @@
       }
 
     }
+    .socialMobile{
+      display: none;
+    }
   }
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1250px){
 
   #mainPage{
 
     .firstBlock{
       flex-direction: column-reverse;
       height: max-content;
+
     }
     .leftPart{
       width: 100%;
-      padding-right: 10px;
+
+      padding-right: 0;
+      padding-left: 0;
     }
     .rightPart{
       width: 100%;
-      height: 90%;
+      height: 700px;
+      background-position: bottom;
     }
+    .thirdBlock{
+      h1{
+        font-size: 48px;
+      }
+    }
+
+    .secondBlock{
+      padding-right: 0;
+      padding-left: 0;
+    }
+
 
     .contacts{
       height: max-content;
@@ -378,20 +396,100 @@
           display: none;
         }
         p{
-          font-size: 15px;
+          font-size: 25px;
         }
       }
 
       .map{
         width: 90%;
         margin-top: 15px;
+        flex-direction: column;
+        justify-content: center;
+        iframe{
+          width: 100%;
+        }
+      }
+      .social{
+        display: none;
+      }
+      .socialMobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 15px;
       }
     }
   }
 }
 
+@media screen and (max-width: 590px){
+  #mainPage{
+
+    .leftPart{
+
+      button{
+        width: 90%;
+        font-size: 36px;
+      }
+
+      h1{
+        font-size: 44px;
+      }
+    }
+
+    .rightPart{
+      height: 305px;
+    }
+
+    .secondBlock{
+
+      h1{
+        font-size: 44px;
+      }
+    }
+
+    .thirdBlock{
+
+      button{
+        width: 90vw;
+        font-size: 38px;
+      }
+    }
+
+    .info{
+
+      .telephone{
+
+
+        p{
+          font-size: 15px;
+        }
+      }
+    }
+
+    .contacts{
+
+      .map{
+        height: 200px;
+
+        iframe{
+          height: 100%;
+        }
+      }
+    }
+  }
+
+}
+
 @media screen and (max-width: 466px){
   #mainPage{
+    .secondBlock{
+
+      h1{
+        font-size: 35px;
+      }
+    }
 
     .contacts{
       padding-left: 0;

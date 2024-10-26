@@ -56,7 +56,10 @@ export default function Page() {
                         <div className="carousel">
                             <RunString dir={"mainPage/mebel"} length={3} width={591} height={480}></RunString>
                         </div>
-                        <button>ЗАКАЗАТЬ</button>
+                        <Link href="/makeOrder">
+                            <button>ЗАКАЗАТЬ</button>
+                        </Link>
+
                     </div>
                     <div className="forthBlock">
                         <h2>Наши партнеры</h2>
@@ -76,17 +79,21 @@ export default function Page() {
                                 <Link href="/"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80" /></Link>
                             </div>
                         </div>
-                        <div className="map">
-                            <iframe
-                                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad618e8cbfcc15e00c78c5cde1ce4b95daa8a59ca30ffce51fc77347308374404&amp;source=constructor"
-                                width="948" height="433" frameBorder="0" ></iframe>
-
-                    </div>
+                            <div className="map">
+                                <iframe
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad618e8cbfcc15e00c78c5cde1ce4b95daa8a59ca30ffce51fc77347308374404&amp;source=constructor"
+                                    width="948" height="433" frameBorder="0"></iframe>
+                                <div className="socialMobile">
+                                    <Link href="/"><Image src="/mainPage/vk.svg" alt="/" width="80" height="80"
+                                                          style={{marginRight: "20px"}}/></Link>
+                                    <Link href="/"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80"/></Link>
+                                </div>
+                            </div>
                         </div>
-                </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
-</>
-)
+        </>
+    )
 }
