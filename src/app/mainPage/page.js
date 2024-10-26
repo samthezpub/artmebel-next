@@ -66,11 +66,11 @@ export default function Page() {
                         <h1>КОНТАКТЫ</h1>
                         <div className="info">
                         <div className="telephone">
-                            <p style={{marginBottom: "20px"}}>г. Мариуполь, ул. Энгельса, 56</p>
+                            <p style={{marginBottom: "20px"}} className="noneMobile">г. Мариуполь, ул. Энгельса, 56</p>
                             <h2 style={{marginBottom: "10px"}}>+7 (949) 000-00-00</h2>
                             <p style={{marginBottom: "20px", color: "#E3E3E3"}}>Для звонков по России</p>
                             <p>ПН-ПТ – 09:00 до 17:00</p>
-                            <p>СБ,ВС – Выходные</p>
+                            <p style={{marginBottom: "20px"}}>СБ,ВС – Выходные</p>
                             <div className="social">
                                 <Link href="/"><Image src="/mainPage/vk.svg" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
                                 <Link href="/"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80" /></Link>
@@ -79,7 +79,7 @@ export default function Page() {
                         <div className="map">
                             <iframe
                                 src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad618e8cbfcc15e00c78c5cde1ce4b95daa8a59ca30ffce51fc77347308374404&amp;source=constructor"
-                                width="948" height="433" frameBorder="0" style={{borderRadius: "50px"}}></iframe>
+                                width="948" height="433" frameBorder="0" ></iframe>
 
                     </div>
                         </div>
