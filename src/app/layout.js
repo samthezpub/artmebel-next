@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
                     <Link href="/">
                         <Image src="/header/shop.svg" alt="profile" width="47" height="34" className="shop"/>
                     </Link>
-                    <Link href="/">
-                        <Image src="/header/favourite.svg" alt="profile" width="47" height="34" href="/"/>
+                    <Link href="/favourite">
+                        <Image src="/header/favourite.svg" alt="profile" width="47" height="34"/>
                     </Link>
                 </div>
                 </div>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
                     <Link href="/">
                         <Image src="/header/shop.svg" alt="profile" width="47" height="34"/>
                     </Link>
-                    <Link href="/">
+                    <Link href="/favourite">
                         <Image src="/header/favourite.svg" alt="profile" width="47" height="34" href="/"/>
                     </Link>
                     <Link href="/">
