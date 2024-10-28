@@ -2,13 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../../../../config";
-
-import './filtersCreate.scss'
+import './filtersCreate.scss';
 
 export default function Page() {
     const [categories, setCategories] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
-    const [formData, setFormData] = useState({ filterType: "", category_id: null });
+    const [formData, setFormData] = useState({ filterType: "", category_id: null, values: [""] });
 
     // Функция для получения категорий
     async function getCategories() {
@@ -46,6 +45,24 @@ export default function Page() {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    // Обработчик для изменения значений фильтра
+    const handleValueChange = (index, value) => {
+        const updatedValues = [...formData.values];
+        updatedValues[index] = value;
+        setFormData((prev) => ({ ...prev, values: updatedValues }));
+    };
+
+    // Обработчик добавления нового поля для значения фильтра
+    const addValueField = () => {
+        setFormData((prev) => ({ ...prev, values: [...prev.values, ""] }));
+    };
+
+    // Обработчик удаления поля для значения фильтра
+    const removeValueField = (index) => {
+        const updatedValues = formData.values.filter((_, i) => i !== index);
+        setFormData((prev) => ({ ...prev, values: updatedValues }));
     };
 
     // Обработчик отправки формы
@@ -96,6 +113,21 @@ export default function Page() {
                         </option>
                     ))}
                 </select>
+
+                <div>
+                    <h4>Значения фильтра:</h4>
+                    {formData.values.map((value, index) => (
+                        <div key={index} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+                            <input
+                                placeholder={`Значение ${index + 1}`}
+                                value={value}
+                                onChange={(e) => handleValueChange(index, e.target.value)}
+                            />
+                            <button type="button" onClick={() => removeValueField(index)}>Удалить</button>
+                        </div>
+                    ))}
+                    <button type="button" onClick={addValueField}>Добавить значение</button>
+                </div>
 
                 <button type="submit">Добавить фильтр</button>
             </form>
