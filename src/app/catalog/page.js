@@ -19,7 +19,7 @@ export default async function Page() {
         <div className="catalog">
             <div className="container">
                 <div className="pagination">
-                <p><Link href="/mainPage">Главная/</Link>Категории </p>
+                <p><Link href="/mainPage">Главная/</Link><span className="active">Категории</span></p>
                 </div>
                 <div className="header">
                     <h1>Каталог</h1>
