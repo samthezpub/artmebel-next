@@ -116,3 +116,32 @@
 
   }
 }
+
+// Медиазапросы для адаптивного отображения
+@media (max-width: 1150px) {
+  .catalog {
+    padding-left: 50px;
+    .categories_container {
+      .categories{
+        padding-right: 10px;
+      }
+      .subcategories-container {
+        .subcategories {
+          grid-template-columns: repeat(2, 1fr); // 2 колонки на экранах меньше 1000px
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .catalog {
+    .categories_container {
+      .subcategories-container {
+        .subcategories {
+          grid-template-columns: 1fr; // 1 колонка на экранах меньше 600px
+        }
+      }
+    }
+  }
+}
