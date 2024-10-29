@@ -12,6 +12,7 @@ export default function Page() {
         price: "",
         title: "",
         category: "",
+        slug: "",
         file: null,
         filters: {}
     });
@@ -29,8 +30,9 @@ export default function Page() {
         data.append("name", formData.name);
         data.append("description", formData.description);
         data.append("price", formData.price);
-        data.append("title", formData.title);
+        data.append("title", formData.name + " | ArtMebel");
         data.append("category", formData.category);
+        data.append("slug", formData.slug);
         if (formData.file) {
             for (let i = 0; i < formData.file.length; i++) {
                 data.append("file", formData.file[i]);
@@ -112,7 +114,6 @@ export default function Page() {
                 <input type="text" name="name" placeholder="Название продукта" value={formData.name} onChange={handleChange} />
                 <input type="text" name="description" placeholder="Описание" value={formData.description} onChange={handleChange} />
                 <input type="number" name="price" placeholder="Цена" value={formData.price} onChange={handleChange} />
-                <input type="text" name="title" placeholder="Название SEO" value={formData.title} onChange={handleChange} disabled={true} />
                 <input type="file" multiple={true} placeholder="Выбрать фото" name="file" accept="image/png, image/jpeg" onChange={handleFileChange} />
 
                 <select name="category" id="category" onChange={handleCategoryChange} value={selectedCategoryId || ""}>

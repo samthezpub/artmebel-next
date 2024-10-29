@@ -1,0 +1,52 @@
+@import "../../../../_globals";
+
+#filterUpdate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+
+    input,
+    select {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #d1d9e6;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #0081a7;
+      }
+    }
+
+    button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: $main-font;
+
+      color: #fff;
+      background-color: $accent-color;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #005f73;
+      }
+    }
+  }
+}
