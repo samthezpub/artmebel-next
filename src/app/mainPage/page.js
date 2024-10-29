@@ -30,8 +30,8 @@ export default function Page() {
 
                         </div>
                     </div>
-                    <div className="secondBlock">
-                        <h1>ПРЕИМУЩЕСТВА</h1>
+                    <div className="secondBlock" id="about">
+
                         <div className="cards">
                             <div className="card1 card">
                                 <h1>Быстрая доставка</h1>
@@ -61,7 +61,7 @@ export default function Page() {
                         </Link>
 
                     </div>
-                    <div className="forthBlock">
+                    <div className="forthBlock" id="contacts">
                         <h2>Наши партнеры</h2>
                         <RunString dir={"mainPage"} length={13} width={460} height={187} />
                     </div>

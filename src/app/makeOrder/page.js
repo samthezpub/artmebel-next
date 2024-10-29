@@ -13,7 +13,7 @@ export default function Page() {
                     <div className="pagination">
                         <p><Link href="/mainPage">Главная/</Link>Оформление заказа</p>
                     </div>
-                    <h1 className="text">Оформление заказа</h1>
+                    <h1 className="text">Корзина</h1>
                     <div className="order-and-cart">
                         <div className="leftPart">
                             <form>

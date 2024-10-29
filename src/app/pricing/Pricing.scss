@@ -2,6 +2,11 @@
 
 .pricing{
 
+  .container{
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
   .pagination{
     font-family: $main-font;
     color: $accent-color;
@@ -28,19 +33,29 @@
 
   .basic-table{
     table{
+      border-collapse: collapse;
       width: 100%;
       text-align: center;
+      border: 1px solid black;
+
+      th{
+        text-align: left;
+        border: 1px solid black;
+      }
     }
 
   }
 
   .many-rows-table{
     table{
+      border-collapse: collapse;
       width: 100%;
       text-align: left;
+      border: 1px solid black;
 
       th{
         text-align: left;
+        border: 1px solid black;
       }
     }
   }

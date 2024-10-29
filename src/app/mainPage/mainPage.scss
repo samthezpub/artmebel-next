@@ -1,6 +1,7 @@
 @import "../_globals.scss";
 
 #mainPage{
+  scroll-behavior: smooth;
 
   .center{
     display: flex;

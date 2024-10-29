@@ -6,6 +6,8 @@ import './Footer.scss'
 import SearchProducts from "../Components/SearchProducts";
 
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -18,7 +20,9 @@ export default function RootLayout({ children }) {
                     <div className="burger">
                         <Image src="/header/burger.svg" width="38" height="24" alt="/" />
                     </div>
+                    <Link href="/mainPage">
                 <Image src="/mainPage/logo 2.svg" alt="logo" width="241" height="124" className="logo"/>
+                    </Link>
                 <div className="icon2">
                     <Link href="/">
                         <Image src="/header/shop.svg" alt="profile" width="47" height="34" className="shop"/>
@@ -32,28 +36,33 @@ export default function RootLayout({ children }) {
                     <SearchProducts/>
                 </form>
                 <div className="icon">
-                    <Link href="/">
+                    <Link href="/makeOrder">
                         <Image src="/header/shop.svg" alt="profile" width="47" height="34"/>
                     </Link>
                     <Link href="/favourite">
                         <Image src="/header/favourite.svg" alt="profile" width="47" height="34" href="/"/>
                     </Link>
-                    <Link href="/">
-                        <Image src="/header/profile.svg" alt="profile" width="47" height="34"
-                               href="/"/> {/*заменить картинку*/}
-                    </Link>
+
                 </div>
             </div>
 
             <div className="secondContainer">
                 <div className="firstLine">
+                    <Link href="/catalog">
                     <h1>КАТАЛОГ</h1>
-                    <h1>ДОСТАВКА И <br/> ОПЛАТА </h1>
+                    </Link>
+                    <Link href="/furnitureForOrder" >
+                    <h1>МЕБЕЛЬ НА <br/> ЗАКАЗ </h1>
+                    </Link>
                     <Link href="./status">
                         <h1>СТАТУС ПРОИЗВОДСТВЕННОГО <br/> ЗАКАЗА</h1>
                     </Link>
+                    <Link href="/mainPage/#about">
                     <h1>О КОМПАНИИ</h1>
+                    </Link>
+                    <Link href="/mainPage/#contacts">
                     <h1>КОНТАКТЫ</h1>
+                    </Link>
                 </div>
                 <div className="secondLine">
                     <Image src="/header/Line 1.png" width="800" height="3" alt="/" className="Line"/>
@@ -78,7 +87,7 @@ export default function RootLayout({ children }) {
             </div>
             </div>
             <div className="thirdContainer">
-
+                <Image src="/header/add.svg" alt="add" width="330" height="246" />
             </div>
         </div>
     </div>
@@ -98,7 +107,7 @@ export default function RootLayout({ children }) {
                         <ul>
                             <li><a href="#"><Image src="/footer/vk.png" width="48" height="48" alt="vk"/></a></li>
                             <li><a href="#"><Image src="/footer/tg.png" width="48" height="48" alt="telegram"/></a></li>
-                            <li><a href="#"><Image src="/footer/tg.png" width="48" height="48" alt="WhatsApp"/></a></li>
+
                         </ul>
                     </div>
 
@@ -126,28 +135,34 @@ export default function RootLayout({ children }) {
                         <p>Интернет-магазин</p>
                         <ul>
                             <li>Мебельная фурнитура</li>
-                            <li>Изделия из стекла</li>
-                            <li>Техника и сантехника</li>
-                            <li>Раздвижные системы</li>
-                            <li>Кромочные материалы</li>
-                            <li>Плитные материалы</li>
-                            <li>Фурнитура для стеклянных<br/>конструкций</li>
-                            <li>Фасады</li>
-                            <li>Услуги</li>
+
+
+                            <li>Бытовая техника</li>
+
                         </ul>
                     </div>
 
                     <div>
                         <p>Компания</p>
                         <ul>
-                            <li>Доставка и оплата</li>
-                            <li>Сроки выполнения услуг</li>
+                            <Link href="/catalog">
+                            <li>Каталог</li>
+                            </Link>
+                            <Link href="/furnitureForOrder" >
+                            <li>Мебель на заказ</li>
+                            </Link>
+                            <Link href="./status">
                             <li>Статус производственного
                                 заказа
                             </li>
+                            </Link>
+                            <Link href="/mainPage/#about">
                             <li>О компании</li>
+                            </Link>
+                            <Link href="/mainPage/#contacts">
                             <li>Контакты</li>
-                            <li>Сотрудничество</li>
+                            </Link>
+
                         </ul>
                     </div>
 
