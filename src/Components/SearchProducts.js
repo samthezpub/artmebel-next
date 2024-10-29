@@ -16,7 +16,7 @@ export default function SearchProducts() {
         if (e.target.value != '') {
 
             let query = e.target.value;
-            const res = await fetch(`${BASE_URL}/api/v1/catalog/search?query=${query}`);
+            const res = await fetch(`${BASE_URL}/api/v1/catalog/search?query=${query}`, { next: { revalidate: 3600 } });
             const data = await res.json();
             console.log(data);
             setProducts(data);

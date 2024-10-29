@@ -6,14 +6,14 @@ import SortingAndFilteringComponent from "../../../Components/SortingAndFilterin
 
 // Получаем продукты по slug категории
 async function getProductsByCategorySlug(categorySlug) {
-    return await fetch(BASE_URL + `/api/v1/category/get/${categorySlug}/products`).then(response => {
+    return await fetch(BASE_URL + `/api/v1/category/get/${categorySlug}/products`, { next: { revalidate: 3600 } }).then(response => {
         return response.json();
     });
 }
 
 // Получаем категорию по slug
 async function getCategoryByCategorySlug(categorySlug) {
-    return await fetch(BASE_URL + `/api/v1/category/getBySlug/${categorySlug}`).then(response => {
+    return await fetch(BASE_URL + `/api/v1/category/getBySlug/${categorySlug}`, { next: { revalidate: 3600 } }).then(response => {
         return response.json();
     });
 }

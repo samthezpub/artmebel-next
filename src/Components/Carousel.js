@@ -11,7 +11,7 @@ const Carousel = () => {
     const itemsRef = useRef([]);
     const intervalTime = 4000;
     let interval = useRef(null);
-    const items = [1, 2, 3, 4]; // заменяет PUG each
+    const items = ["/mainPage/mebel/0.png", "/mainPage/mebel/1.png", "/mainPage/mebel/2.png"]; // заменяет PUG each
 
     const resize = () => {
         const newWidth = Math.max(window.innerWidth * 0.25, 275);
@@ -84,14 +84,8 @@ const Carousel = () => {
     return (
         <div className="carousel">
             <div className="carousel__body">
-                <div className="carousel__prev" onClick={prev}>
-                    <i className="far fa-angle-left"></i>
-                </div>
-                <div className="carousel__next" onClick={next}>
-                    <i className="far fa-angle-right"></i>
-                </div>
                 <div className="carousel__slider" ref={sliderRef}>
-                    {items.map((val, index) => (
+                    {items.map((src, index) => (
                         <div
                             key={index}
                             className="carousel__slider__item"
@@ -99,7 +93,7 @@ const Carousel = () => {
                         >
                             <div className="item__3d-frame">
                                 <div className="item__3d-frame__box item__3d-frame__box--front">
-                                    <h1>{val}</h1>
+                                    <img src={src} alt={`Image ${index + 1}`} style={{width: '100%', height: '100%'}}/>
                                 </div>
                                 <div className="item__3d-frame__box item__3d-frame__box--left"></div>
                                 <div className="item__3d-frame__box item__3d-frame__box--right"></div>

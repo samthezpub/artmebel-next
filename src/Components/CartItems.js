@@ -25,7 +25,7 @@ export default function CartItems() {
     }
 
     async function getProductFromServer(id) {
-        return await fetch(`${BASE_URL}/api/v1/catalog/getById/${id}`).then(res => res.json());
+        return await fetch(`${BASE_URL}/api/v1/catalog/getById/${id}`, { next: { revalidate: 3600 } }).then(res => res.json());
     }
 
     function removeFromCart(productId) {
