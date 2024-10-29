@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import FiltersComponent from "./FiltersComponent";
 import ProductImageSlider from "../Components/ProductImageSlider";
+import Link from "next/link";
 
 function sortProducts(products, sortType) {
     if (sortType === "priceAsc") {
@@ -17,7 +18,7 @@ function sortProducts(products, sortType) {
     }
 }
 
-const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
+const SortingAndFilteringComponent = ({initialProducts, filters}) => {
     const [products, setProducts] = useState(initialProducts);
     const [sortType, setSortType] = useState("default");
     const [activeFilters, setActiveFilters] = useState([]);
@@ -62,7 +63,7 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
         const updatedFilters = activeFilters.filter((filter) => filter.filterId !== filterId);
 
         if (value) {
-            updatedFilters.push({ filterId, value });
+            updatedFilters.push({filterId, value});
         }
 
         setActiveFilters(updatedFilters);
@@ -96,25 +97,26 @@ const SortingAndFilteringComponent = ({ initialProducts, filters }) => {
                 </select>
             </div>
 
-            <FiltersComponent filters={filters} onFilterChange={handleFilterChange} />
+            <FiltersComponent filters={filters} onFilterChange={handleFilterChange}/>
 
             <div className="products">
                 {products.map((product) => (
                     <div className="product" key={product.id}>
-                        <div className="heart-container" onClick={()=> addToFavorite(product.id)}>
+                        <div className="heart-container" onClick={() => addToFavorite(product.id)}>
                             <Image className="heart-outline" src={"/catalog/categorySlug/like.svg"}
-                                   alt={"Добавить в избранное"} width={40} height={40} />
+                                   alt={"Добавить в избранное"} width={40} height={40}/>
                             <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
-                                   alt={"Добавить в избранное"} width={40} height={40} />
+                                   alt={"Добавить в избранное"} width={40} height={40}/>
                         </div>
 
-                        <ProductImageSlider productId={product.id} imagesCount={product.photosCount}></ProductImageSlider>
+                        <ProductImageSlider productId={product.id}
+                                            imagesCount={product.photosCount}></ProductImageSlider>
 
                         <p className="price">{product.price} ₽</p>
                         <h3 className="name">{product.name}</h3>
-                        <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} />
+                        <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>
                         <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}
-                               onClick={() => addToCart(product.id)} />
+                               onClick={() => addToCart(product.id)}/>
                     </div>
                 ))}
             </div>
