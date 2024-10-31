@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
                     <div className="burger">
                         <Image src="/header/burger.svg" width="38" height="24" alt="/" />
                     </div>
-                    <Link href="/mainPage">
+                    <Link href="/">
                 <Image src="/mainPage/logo 2.svg" alt="logo" width="241" height="124" className="logo"/>
                     </Link>
                 <div className="icon2">
@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
                     <Link href="./status">
                         <h1>СТАТУС ПРОИЗВОДСТВЕННОГО <br/> ЗАКАЗА</h1>
                     </Link>
-                    <Link href="/mainPage/#about">
+                    <Link href="/#about">
                     <h1>О КОМПАНИИ</h1>
                     </Link>
-                    <Link href="/mainPage/#contacts">
+                    <Link href="/#contacts">
                     <h1>КОНТАКТЫ</h1>
                     </Link>
                 </div>
@@ -156,10 +156,10 @@ export default function RootLayout({ children }) {
                                 заказа
                             </li>
                             </Link>
-                            <Link href="/mainPage/#about">
+                            <Link href="/#about">
                             <li>О компании</li>
                             </Link>
-                            <Link href="/mainPage/#contacts">
+                            <Link href="/#contacts">
                             <li>Контакты</li>
                             </Link>
 

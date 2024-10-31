@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import './ProductImageSlider.scss';
+import Link from "next/link";
+
 
 export default function ProductImageSlider({ productId, imagesCount }) {
     const [currentImage, setCurrentImage] = useState(1);
@@ -46,6 +48,7 @@ export default function ProductImageSlider({ productId, imagesCount }) {
                 alt={`Картинка продукта номер ${currentImage}`}
                 className="photoProduct"
             />
+
 
             <Image src={"/catalog/categorySlug/right-arr.png"} width={10} height={16} className="slider-arrow next-arrow" onClick={handleNext}/>
 

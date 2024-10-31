@@ -111,9 +111,12 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
 
                         <ProductImageSlider productId={product.id}
                                             imagesCount={product.photosCount}></ProductImageSlider>
-
+                        <Link href={`/catalog/products/${product.slug}`}>
                         <p className="price">{product.price} ₽</p>
+                        </Link>
+                        <Link href={`/catalog/products/${product.slug}`}>
                         <h3 className="name">{product.name}</h3>
+                        </Link>
                         <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>
                         <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}
                                onClick={() => addToCart(product.id)}/>

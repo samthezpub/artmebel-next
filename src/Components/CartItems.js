@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import Image from "next/image";
 import ProductImageSlider from "@/Components/ProductImageSlider";
 import {BASE_URL} from "../../config";
+import Link from "next/link";
 
 export default function CartItems() {
     const [products, setProducts] = useState([]);
@@ -57,7 +58,10 @@ export default function CartItems() {
                         <ProductImageSlider productId={product.id} imagesCount={product.photosCount}></ProductImageSlider>
 
                         <p className="price">{product.price} ₽</p>
+
+
                         <h3 className="name">{product.name}</h3>
+
                     </div>
                 ))
             )}

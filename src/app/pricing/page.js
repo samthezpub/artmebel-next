@@ -9,7 +9,7 @@ export default function Pricing() {
         <div className="pricing">
             <div className="container">
                 <div className="pagination">
-                    <p><Link href="/mainPage">Главная/</Link>Цены</p>
+                    <p><Link href="/">Главная/</Link>Цены</p>
                 </div>
                 <div className="header">
                     <p>Предоставляем услуги по раскрою: ЛДСП, МДФ, фанеры, пластика,<br/>

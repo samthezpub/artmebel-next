@@ -4,6 +4,8 @@ import Image from "next/image";
 import ProductImageSlider from "../../../../Components/ProductImageSlider";
 import {BASE_URL} from "../../../../../config";
 import SimilarProducts from "./SimilarProducts";
+import FavouriteProductSlug from "../../../../Components/FavouriteProductSlug";
+import CartProductSlug from "../../../../Components/CartProductSlug";
 
 
 export default async function Page({params}) {
@@ -44,15 +46,13 @@ export default async function Page({params}) {
                         <div className="text">
                             <div className="firstLine">
                                 <h1>{product.name}</h1>
-                                <Image src="/products/heart.png" className="favorite" width="40" height="40"
-                                       alt="favorite"/>
+                                <FavouriteProductSlug productID={product.id}></FavouriteProductSlug>
                             </div>
                             <p>{product.description}</p>
                             <div className="price">
                                 <h1>{product.price} ₽</h1>
                                 <Image src="/products/Line.png" height="4" width="500" alt="/"/>
-                                <Image src="/products/shoppingCart.png" width="67" height="44" alt="shoppingCart"
-                                       className="shoppingCart"/>
+                                <CartProductSlug productID={product.id}></CartProductSlug>
                             </div>
                         </div>
                     </div>
