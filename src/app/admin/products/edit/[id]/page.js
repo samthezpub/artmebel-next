@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../../config";
+import { BASE_URL } from "../../../../../../config";
 import "./Create.scss"; // Подключаем обычный SCSS файл без модулей
 
-export default function Page() {
+export default function EditPage({params}) {
+    const  productId  = params.id;
+
     const [categories, setCategories] = useState([]);
     const [filters, setFilters] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -23,7 +25,12 @@ export default function Page() {
         return await fetch(`${BASE_URL}/api/v1/category/get-all`, { method: "GET" }).then(res => res.json());
     }
 
-    async function submitForm(event) {
+    async function getProductDetails() {
+        const response = await fetch(`${BASE_URL}/api/v1/catalog/getById/${productId}`, { method: "GET" });
+        return await response.json();
+    }
+
+    async function updateForm(event) {
         event.preventDefault();
         const data = new FormData();
         data.append("name", formData.name);
@@ -43,40 +50,52 @@ export default function Page() {
         });
 
         try {
-            const response = await fetch(`${BASE_URL}/api/v1/catalog/create`, {
-                method: "POST",
+            const response = await fetch(`http://localhost:8080/api/v1/catalog/update/${productId}`, {
+                method: "PUT",
                 body: data
             });
 
             if (!response.ok) {
-                throw new Error("Ошибка при отправке формы");
+                throw new Error("Ошибка при обновлении продукта");
             }
 
-            alert("Продукт успешно создан!");
+            alert("Продукт успешно обновлен!");
         } catch (error) {
             console.error("Ошибка:", error);
-            alert("Ошибка при создании продукта");
+            alert("Ошибка при обновлении продукта");
         }
     }
 
     useEffect(() => {
-        async function fetchCategories() {
+        async function fetchData() {
             try {
                 const categories = await getCategories();
                 setCategories(categories);
 
+                const product = await getProductDetails();
+                setFormData({
+                    name: product.name,
+                    description: product.description,
+                    price: product.price,
+                    title: product.title,
+                    category: product.category.id,
+                    slug: product.slug,
+                    file: null,
+                    filters: product.filters || {}
+                });
+                setPreviewImages(product.images || []);
+
                 if (categories.length > 0) {
-                    setSelectedCategoryId(categories[0].id);
-                    setFilters(categories[0].filters);
-                    setFormData((prev) => ({ ...prev, category: categories[0].id }));
+                    setSelectedCategoryId(product.category.id);
+                    setFilters(categories.find(cat => cat.id === product.category.id)?.filters || []);
                 }
             } catch (error) {
-                console.error("Ошибка при загрузке категорий:", error);
+                console.error("Ошибка при загрузке данных:", error);
             }
         }
 
-        fetchCategories();
-    }, []);
+        fetchData();
+    }, [productId]);
 
     const handleCategoryChange = (event) => {
         const selectedId = parseInt(event.target.value);
@@ -108,8 +127,8 @@ export default function Page() {
     };
 
     return (
-        <div id="productCreate" className="productCreate">
-            <form onSubmit={submitForm} className="form">
+        <div id="productEdit" className="productEdit">
+            <form onSubmit={updateForm} className="form">
                 <input type="text" name="name" placeholder="Название продукта" value={formData.name} onChange={handleChange} className="input" />
                 <textarea name="description" placeholder="Описание" value={formData.description} onChange={handleChange} className="textarea" />
                 <input type="number" name="price" placeholder="Цена" value={formData.price} onChange={handleChange} className="input" />
@@ -130,7 +149,7 @@ export default function Page() {
                 {filters.map(filter => (
                     <div key={filter.id} className="filter">
                         <label>{filter.filterType}</label>
-                        <select name={filter.filterType} onChange={(e) => handleFilterChange(filter.filterType, e.target.value)} className="filterSelect">
+                        <select name={filter.filterType} onChange={(e) => handleFilterChange(filter.filterType, e.target.value)} className="filterSelect" value={formData.filters[filter.filterType] || ""}>
                             {filter.values.map(value => (
                                 <option key={value} value={value}>{value}</option>
                             ))}
@@ -138,7 +157,7 @@ export default function Page() {
                     </div>
                 ))}
 
-                <button type="submit" className="submitButton">Создать</button>
+                <button type="submit" className="submitButton">Обновить</button>
             </form>
         </div>
     );

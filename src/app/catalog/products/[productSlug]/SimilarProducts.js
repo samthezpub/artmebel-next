@@ -6,7 +6,9 @@ import './similarProducts.scss';
 import Image from "next/image";
 import ProductImageSlider from "@/Components/ProductImageSlider";
 
-export default function SimilarProducts({ category_id, currentProductId }) {
+export default function SimilarProducts({Curproduct}) {
+    const [product, setProduct] = useState(Curproduct)
+    const [category_id, setCategory_id] = useState(Curproduct.category.id)
     const [similarProducts, setSimilarProducts] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -61,6 +63,8 @@ export default function SimilarProducts({ category_id, currentProductId }) {
 
     useEffect(() => {
         getCategoryProducts();
+        console.log(Curproduct)
+        console.log(category_id)
     }, [category_id]);
 
     const itemsPerPage = 5;

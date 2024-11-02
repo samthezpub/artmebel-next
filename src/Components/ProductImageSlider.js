@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import './ProductImageSlider.scss';
 
-export default function ProductImageSlider({ productId, imagesCount }) {
+export default function ProductImageSlider({ productSlug, imagesCount }) {
     const [currentImage, setCurrentImage] = useState(1);
 
 
@@ -19,8 +19,8 @@ export default function ProductImageSlider({ productId, imagesCount }) {
     };
 
     // Генерация URL для изображения на основе productId и currentImage
-    const getImageUrl = (productId, imageNumber) => {
-        return `https://d2197f97-art-mebel.s3.timeweb.cloud/${productId}_${imageNumber}.jpg`;
+    const getImageUrl = (productSlug, imageNumber) => {
+        return `https://d2197f97-art-mebel.s3.timeweb.cloud/${productSlug}_${imageNumber}.jpg`;
     };
 
     // Генерация точек для навигации
@@ -40,7 +40,7 @@ export default function ProductImageSlider({ productId, imagesCount }) {
 
 
             <Image
-                src={getImageUrl(productId, currentImage)}
+                src={getImageUrl(productSlug, currentImage)}
                 width={170}  // Можешь изменить ширину и высоту по необходимости
                 height={183}
                 alt={`Картинка продукта номер ${currentImage}`}

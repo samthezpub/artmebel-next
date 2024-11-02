@@ -109,7 +109,7 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
                                    alt={"Добавить в избранное"} width={40} height={40}/>
                         </div>
 
-                        <ProductImageSlider productId={product.id}
+                        <ProductImageSlider productSlug={product.slug}
                                             imagesCount={product.photosCount}></ProductImageSlider>
 
                         <p className="price">{product.price} ₽</p>
