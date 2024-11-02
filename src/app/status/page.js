@@ -10,7 +10,7 @@ export default function Page() {
            <div id="status">
                <div className="container">
                <div className="pagination">
-                   <p><Link href="/mainPage">Главная/</Link><span>Статус производственного заказа</span> </p>
+                   <p><Link href="/">Главная/</Link><span>Статус производственного заказа</span> </p>
                </div>
                    <div className="header">
                        <h1>Статус производственного заказа</h1>

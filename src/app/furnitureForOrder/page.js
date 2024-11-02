@@ -46,7 +46,7 @@ export default function Page() {
     return (
         <>
             <div className="pagination">
-                <p><Link href="/mainPage">Главная/</Link>Мебель на заказ</p>
+                <p><Link href="/">Главная/</Link>Мебель на заказ</p>
             </div>
             <div className="carousel-container">
                 <Carousel />

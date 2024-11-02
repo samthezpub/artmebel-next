@@ -11,7 +11,7 @@ export default function Page() {
             <div id="makeOrder">
                 <div className="container">
                     <div className="pagination">
-                        <p><Link href="/mainPage">Главная/</Link>Оформление заказа</p>
+                        <p><Link href="/">Главная/</Link>Оформление заказа</p>
                     </div>
                     <h1 className="text">Корзина</h1>
                     <div className="order-and-cart">
