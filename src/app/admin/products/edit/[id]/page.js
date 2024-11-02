@@ -14,7 +14,7 @@ export default function EditPage({params}) {
         description: "",
         price: "",
         title: "",
-        category: "",
+        categoryId: "",
         slug: "",
         file: null,
         filters: {}
@@ -32,12 +32,13 @@ export default function EditPage({params}) {
 
     async function updateForm(event) {
         event.preventDefault();
+
         const data = new FormData();
         data.append("name", formData.name);
         data.append("description", formData.description);
         data.append("price", formData.price);
-        data.append("title", formData.name + " | ArtMebel");
-        data.append("category", formData.category);
+        data.append("title", formData.title);
+        data.append("categoryId", formData.categoryId);  // Убедимся, что здесь обновленный categoryId
         data.append("slug", formData.slug);
 
         if (formData.file) {
@@ -45,14 +46,17 @@ export default function EditPage({params}) {
                 data.append("file", formData.file[i]);
             }
         }
-        Object.entries(formData.filters).forEach(([key, value]) => {
-            data.append(`filters[${key}]`, value);
+        data.append("filters", JSON.stringify(formData.filters));
+
+        console.log("Updated data before submission:", {
+            ...formData,
+            categoryId: formData.categoryId,
         });
 
         try {
             const response = await fetch(`http://localhost:8080/api/v1/catalog/update/${productId}`, {
                 method: "PUT",
-                body: data
+                body: data,
             });
 
             if (!response.ok) {
@@ -78,10 +82,10 @@ export default function EditPage({params}) {
                     description: product.description,
                     price: product.price,
                     title: product.title,
-                    category: product.category.id,
+                    categoryId: product.category.id,
                     slug: product.slug,
                     file: null,
-                    filters: product.filters || {}
+                    filters: {}
                 });
                 setPreviewImages(product.images || []);
 
@@ -100,10 +104,10 @@ export default function EditPage({params}) {
     const handleCategoryChange = (event) => {
         const selectedId = parseInt(event.target.value);
         setSelectedCategoryId(selectedId);
+        setFormData((prev) => ({ ...prev, categoryId: selectedId }));
 
         const selectedCategory = categories.find(category => category.id === selectedId);
         setFilters(selectedCategory ? selectedCategory.filters : []);
-        setFormData((prev) => ({ ...prev, category: selectedId }));
     };
 
     const handleChange = (event) => {
@@ -119,10 +123,14 @@ export default function EditPage({params}) {
         setPreviewImages(previews);
     };
 
-    const handleFilterChange = (filterType, value) => {
+    const handleFilterChange = (filterId, value) => {
+        // Создаем новый объект filters на основе существующего, изменяя только выбранный filterId
         setFormData((prev) => ({
             ...prev,
-            filters: { ...prev.filters, [filterType]: value }
+            filters: {
+                ...prev.filters, // Сохраняем остальные фильтры
+                [filterId]: value // Обновляем только значение выбранного фильтра
+            }
         }));
     };
 
@@ -140,7 +148,7 @@ export default function EditPage({params}) {
                     ))}
                 </div>
 
-                <select name="category" id="category" onChange={handleCategoryChange} value={selectedCategoryId || ""} className="select">
+                <select name="categoryId" id="categoryId" onChange={handleCategoryChange} value={selectedCategoryId || ""} className="select">
                     {categories.map(category => (
                         <option key={category.id} value={category.id}>{category.name}</option>
                     ))}
@@ -149,7 +157,11 @@ export default function EditPage({params}) {
                 {filters.map(filter => (
                     <div key={filter.id} className="filter">
                         <label>{filter.filterType}</label>
-                        <select name={filter.filterType} onChange={(e) => handleFilterChange(filter.filterType, e.target.value)} className="filterSelect" value={formData.filters[filter.filterType] || ""}>
+                        <select
+                            onChange={(e) => handleFilterChange(filter.id, e.target.value)} // filter.id здесь
+                            className="filterSelect"
+                            value={formData.filters[filter.id] || ""}
+                        >
                             {filter.values.map(value => (
                                 <option key={value} value={value}>{value}</option>
                             ))}
