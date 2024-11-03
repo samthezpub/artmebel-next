@@ -89,3 +89,35 @@
 }
 
 }
+
+@media  screen and (max-width: 422px) {
+  .pagination{
+    padding-left: 20px;
+  }
+
+  #furnitureForOrder{
+
+    .Order{
+      width: 100%;
+
+      h1{
+        padding-left: 25px;
+      }
+
+      form{
+        width: 90%;
+      }
+
+      input{
+        width: 90%;
+      }
+      textarea{
+        width: 90%;
+      }
+      button{
+        width: 100%;
+      }
+    }
+
+  }
+}
