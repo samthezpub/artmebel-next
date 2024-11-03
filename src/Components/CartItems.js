@@ -55,7 +55,7 @@ export default function CartItems() {
                             <Image className="cross" src="/makeOrder/cross.png" width={20} height={20} alt="Убрать товар из корзины"/>
                         </div>
 
-                        <ProductImageSlider productId={product.id} imagesCount={product.photosCount}></ProductImageSlider>
+                        <ProductImageSlider productSlug={product.slug} imagesCount={product.photosCount}></ProductImageSlider>
 
                         <p className="price">{product.price} ₽</p>
 
