@@ -31,6 +31,12 @@
 
 @media screen and (max-width: 500px){
   #status {
+    .header{
+
+      h1{
+        text-align: center;
+      }
+    }
 
     .container {
       padding-left: 0;
