@@ -1,13 +1,13 @@
 @import "../app/_globals";
 
-.search-products{
+.search-products {
   position: relative;
 
-  .search{
+  .search {
     padding-left: 5px;
   }
 
-  .founded-products{
+  .founded-products {
     list-style: none;
 
     padding: 5px;
@@ -20,9 +20,15 @@
 
     overflow-y: auto;
 
-    li{
-      &:not(:last-child){
-        border-bottom: 1px solid $accent-color;
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        &:not(:last-child) {
+          border-bottom: 1px solid $accent-color;
+          margin-bottom: 20px;
+        }
       }
     }
   }

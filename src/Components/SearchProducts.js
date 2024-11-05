@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 
 import './SearchProducts.scss'
 import {BASE_URL} from "../../config";
+import Link from "next/link";
 
 export default function SearchProducts() {
     const [query, setQuery] = useState('');
@@ -31,7 +32,7 @@ export default function SearchProducts() {
 
             {products.length > 0 && query.length !=0 ? (
                 <ul className="founded-products">
-                    {products && products.map((product) => (<li key={product.id}>{product.name}</li>))}
+                    {products && products.map((product) => (<li key={product.id}><Link href={`/catalog/products/${product.slug}`}>{product.name}</Link></li>))}
                 </ul>
             ):(null)}
 
