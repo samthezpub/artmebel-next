@@ -218,11 +218,11 @@ export default function RootLayout({ children }) {
                         <div className="Line1">
                             <p>Главная</p>
                             <p>Каталог</p>
-                            <p>Доставка и оплата</p>
+                            <p>Доставка и <br/> оплата</p>
                         </div>
                         <div className="Line2">
-                            <p>СТАТУС ЗАКАЗА</p>
-                            <p>О КОМПАНИИ</p>
+                            <p>СТАТУС<br/> ЗАКАЗА</p>
+                            <p>О<br/> КОМПАНИИ</p>
                             <p>КОНТАКТЫ</p>
                         </div>
                     </div>
