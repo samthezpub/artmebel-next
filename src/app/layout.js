@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import './Footer.scss'
 import SearchProducts from "../Components/SearchProducts";
+import BurgerModal from "@/Components/BurgerModal";
+import Burger from "@/Components/Burger";
 
 
 
@@ -17,11 +19,9 @@ export default function RootLayout({ children }) {
             <div className="forAdapt">
             <div className="firstContainer">
                 <div className="forMobile">
-                    <div className="burger">
-                        <Image src="/header/burger.svg" width="38" height="24" alt="/" />
-                    </div>
+                    <Burger/>
                     <Link href="/">
-                <Image src="/mainPage/logo 2.svg" alt="logo" width="241" height="124" className="logo"/>
+                <Image src="/logo.svg" alt="logo" width="241" height="124" className="logo"/>
                     </Link>
                 <div className="icon2">
                     <Link href="/">
@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
             <div className="footer-container">
                 <div className="info">
                     <Link href="/">
-                        <Image src="/mainPage/logo 2.svg" width="200" height="100" alt=""/>
+                        <Image src="/logo.svg" width="200" height="100" alt=""/>
                     </Link>
 
 
@@ -207,7 +207,7 @@ export default function RootLayout({ children }) {
             <div className="footer-mobile">
                 <div className="container">
                     <div className="logo">
-                        <Image src="/mainPage/logo 2.svg" alt="logo" width="150" height="80" />
+                        <Image src="/logo.png" alt="logo" width="150" height="80" />
                     </div>
                     <div className="forForm">
 

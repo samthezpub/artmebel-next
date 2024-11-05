@@ -19,9 +19,9 @@ export default function Page() {
                 </h1>
                 <div className="forButton">
                   <button>КАТАЛОГ</button>
-                  <button >РАСПРОДАЖА</button>
+                  <button>РАСПРОДАЖА</button>
                   <button>АКЦИЯ</button>
-                  <button >НОВИНКИ</button>
+                  <button>НОВИНКИ</button>
                   <button>УЦЕНКА</button>
                   <button>ХИТ</button>
                 </div>
