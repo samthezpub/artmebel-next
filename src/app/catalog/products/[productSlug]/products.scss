@@ -2,6 +2,18 @@
 
 #products{
 
+  .map{
+    margin-left: 11%;
+    margin-bottom: 20px;
+
+    font-family: $main-font;
+
+
+    .active{
+      font-weight: bold;
+    }
+  }
+
   .mainContainer{
     display: flex;
     flex-direction: column;
@@ -141,6 +153,7 @@
           h1 {
             font-size: 30px;
             margin-bottom: 10px;
+            margin-right: 0;
           }
         }
 
@@ -171,15 +184,15 @@
         height: 350px;
 
         .photoProduct {
-          width: 60vw;
-          height: auto;
+          width: 200px;
+          height: 200px;
         }
       }
 
       .text {
         .firstLine {
           h1 {
-            margin-right: 15px;
+            margin-right: 0;
           }
         }
       }

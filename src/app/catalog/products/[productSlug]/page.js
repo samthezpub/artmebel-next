@@ -6,7 +6,8 @@ import {BASE_URL} from "../../../../../config";
 import SimilarProducts from "./SimilarProducts";
 import FavouriteProductSlug from "../../../../Components/FavouriteProductSlug";
 import CartProductSlug from "../../../../Components/CartProductSlug";
-
+import { redirect } from 'next/navigation'
+import Link from "next/link";
 
 export default async function Page({params}) {
 
@@ -24,6 +25,7 @@ export default async function Page({params}) {
             console.log(result);
             return result;
         } catch (error) {
+            redirect("/404")
             console.error("Ошибка при получении данных продукта:", error);
             return null;
         }
@@ -38,10 +40,16 @@ export default async function Page({params}) {
     return (
         <>
             <div id="products">
+                <div className="map">
+                    <Link href={"/"}>Главная</Link>/<Link href={"/catalog"}>Каталог</Link>/<Link
+                    href={`/catalog/${category.slug}`} >{category.name}</Link>/<span className="active">{product.name}</span>
+                </div>
                 <div className="mainContainer">
+
                     <div className="container">
                         <div className="carousel">
-                            <ProductImageSlider productId={product.id} imagesCount={product.photosCount}></ProductImageSlider>
+                            <ProductImageSlider productSlug={product.slug}
+                                                imagesCount={product.photosCount}></ProductImageSlider>
                         </div>
                         <div className="text">
                             <div className="firstLine">
@@ -58,7 +66,7 @@ export default async function Page({params}) {
                     </div>
 
                     <div className="similar-products">
-                        <SimilarProducts category_id={category.id} currentProductId={product.id}></SimilarProducts>
+                        <SimilarProducts categoryId={category.id} currentProductId={product.id}></SimilarProducts>
                     </div>
                 </div>
             </div>

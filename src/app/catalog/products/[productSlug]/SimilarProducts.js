@@ -6,9 +6,9 @@ import './similarProducts.scss';
 import Image from "next/image";
 import ProductImageSlider from "@/Components/ProductImageSlider";
 
-export default function SimilarProducts({Curproduct}) {
-    const [product, setProduct] = useState(Curproduct)
-    const [category_id, setCategory_id] = useState(Curproduct.category.id)
+export default function SimilarProducts({categoryId, currentProductId}) {
+    const [product, setProduct] = useState(currentProductId)
+    const [category_id, setCategory_id] = useState(categoryId)
     const [similarProducts, setSimilarProducts] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -63,7 +63,6 @@ export default function SimilarProducts({Curproduct}) {
 
     useEffect(() => {
         getCategoryProducts();
-        console.log(Curproduct)
         console.log(category_id)
     }, [category_id]);
 
@@ -106,7 +105,7 @@ export default function SimilarProducts({Curproduct}) {
                                 <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
                                        alt={"Добавить в избранное"} width={40} height={40} />
                             </div>
-                            <ProductImageSlider productId={product.id} imagesCount={product.photosCount} />
+                            <ProductImageSlider productSlug={product.slug} imagesCount={product.photosCount} />
                             <p className="price">{product.price} ₽</p>
                             <h3 className="name">{product.name}</h3>
                             <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} />
