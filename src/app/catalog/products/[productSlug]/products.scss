@@ -2,6 +2,10 @@
 
 #products{
 
+  .nonePC{
+    display: none;
+  }
+
   .map{
     margin-left: 11%;
     margin-bottom: 20px;
@@ -45,6 +49,8 @@
 
     }
   }
+
+
 
   .text{
     width: 868px;
@@ -131,6 +137,21 @@
   }
   @media screen and (max-width: 939px) {
     #products {
+
+      .nonePC{
+        display: block;
+      }
+      .noneMobile{
+        display: none;
+      }
+
+      .forMobile{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
 
       .container {
         justify-content: center;

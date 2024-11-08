@@ -54,15 +54,23 @@ export default async function Page({params}) {
                         <div className="text">
                             <div className="firstLine">
                                 <h1>{product.name}</h1>
+                                <div className="noneMobile">
                                 <FavouriteProductSlug productID={product.id}></FavouriteProductSlug>
+                                </div>
                             </div>
                             <p>{product.description}</p>
                             <div className="price">
                                 <h1>{product.price} ₽</h1>
                                 <Image src="/products/Line.png" height="4" width="500" alt="/"/>
-                                <CartProductSlug productID={product.id}></CartProductSlug>
+                                <div className="forMobile">
+                                    <CartProductSlug productID={product.id}></CartProductSlug>
+                                    <div className="nonePC">
+                                        <FavouriteProductSlug productID={product.id}
+                                                              className="OnMobile"></FavouriteProductSlug>
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                     </div>
 
                     <div className="similar-products">
