@@ -206,22 +206,34 @@ export default function RootLayout({ children }) {
             <div className="footer-mobile">
                 <div className="container">
                     <div className="logo">
-                        <Image src="/logo.png" alt="logo" width="150" height="80" />
+                        <Image src="/logo.png" alt="logo" width="150" height="80"/>
                     </div>
                     <div className="forForm">
 
-                            <SearchProducts/>
+                        <SearchProducts/>
 
                     </div>
                     <div className="text">
                         <div className="Line1">
                             <p>Главная</p>
                             <p>Каталог</p>
-                            <p>Доставка и <br/> оплата</p>
+                            <p>Доставка и оплата</p>
                         </div>
                         <div className="Line2">
-                            <p>СТАТУС<br/> ЗАКАЗА</p>
-                            <p>О<br/> КОМПАНИИ</p>
+                            <p>СТАТУС ЗАКАЗА</p>
+                            <p>О КОМПАНИИ</p>
+                            <p>КОНТАКТЫ</p>
+                        </div>
+                    </div>
+                    <div className="text2">
+                        <div className="Line1">
+                            <p>Главная</p>
+                            <p>Каталог</p>
+                            <p>Доставка <br/> и оплата</p>
+                        </div>
+                        <div className="Line2">
+                            <p>СТАТУС <br/> ЗАКАЗА</p>
+                            <p>О <br/> КОМПАНИИ</p>
                             <p>КОНТАКТЫ</p>
                         </div>
                     </div>
@@ -242,26 +254,33 @@ export default function RootLayout({ children }) {
                             </div>
                         </div>
                         <div className="description">
-                            <p>ИП «ArtMebel» использует файлы «cookie», с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.
-                                На информационном ресурсе применяются рекомендательные технологии. При применении информационных технологий предоставления информации осуществляется сбор, систематизация и анализ сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации.</p>
+                            <p>ИП «ArtMebel» использует файлы «cookie», с целью персонализации сервисов и повышения
+                                удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие
+                                информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы
+                                «cookie», измените настройки браузера.
+                                На информационном ресурсе применяются рекомендательные технологии. При применении
+                                информационных технологий предоставления информации осуществляется сбор, систематизация
+                                и анализ сведений, относящихся к предпочтениям пользователей сети «Интернет»,
+                                находящихся на территории Российской Федерации.</p>
                         </div>
                         <div className="social-media">
-                            <Link href="/"><Image src="/footer/vk.png" alt="/" width="48" height="48" style={{marginRight: "32px"}} /></Link>
-                            <Link href="/"><Image src="/footer/tg.png" alt="/" width="48" height="48" /></Link>
+                            <Link href="/"><Image src="/footer/vk.png" alt="/" width="48" height="48"
+                                                  style={{marginRight: "32px"}}/></Link>
+                            <Link href="/"><Image src="/footer/tg.png" alt="/" width="48" height="48"/></Link>
                         </div>
                     </div>
                     <div className="lastContainer">
-                    <div className="partners">
-                        <Link href="/"><p>НАШИ ПАРТНЁРЫ</p></Link>
+                        <div className="partners">
+                            <Link href="/"><p>НАШИ ПАРТНЁРЫ</p></Link>
+                        </div>
+                        <div className="INN">
+                            <p>ИНН: 123456789012</p>
+                            <p>ОГРНИП: 123456789012345</p>
+                        </div>
+                        <div className="IP">
+                            <p>© ИП «Art Mebel», 2024</p>
+                        </div>
                     </div>
-                    <div className="INN">
-                        <p>ИНН: 123456789012</p>
-                        <p>ОГРНИП: 123456789012345</p>
-                    </div>
-                    <div className="IP">
-                        <p>© ИП «Art Mebel», 2024</p>
-                    </div>
-                </div>
                 </div>
             </div>
             </div>
