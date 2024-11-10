@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../../config";
+import { BASE_URL } from "../../../../config";
 import "./Create.scss"; // Подключаем обычный SCSS файл без модулей
 
 export default function Page() {

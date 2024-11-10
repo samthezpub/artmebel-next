@@ -3,12 +3,13 @@
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {BASE_URL} from "../../../config";
 
 export default function ProductList() {
     const [products, setProducts] = useState([]); // Установим начальное значение пустым массивом
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/v1/catalog/get-all")
+        fetch(`${BASE_URL}/api/v1/catalog/get-all`)
             .then((res) => res.json()) // Преобразуем ответ в JSON
             .then((data) => {
                 setProducts(data); // Устанавливаем данные в состояние

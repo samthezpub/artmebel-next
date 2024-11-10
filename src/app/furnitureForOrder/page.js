@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './furnitureForOrder.scss';
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {BASE_URL} from "../../config";
 
 const Carousel = dynamic(() => import('../../Components/Carousel'), { ssr: false });
 
@@ -24,7 +25,7 @@ export default function Page() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/v1/customorder/create', {
+            const response = await fetch(`${BASE_URL}/api/v1/customorder/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

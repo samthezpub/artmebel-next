@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import './orders.scss';
-import { BASE_URL } from "../../../../config";
+import { BASE_URL } from "../../../config";
 
 async function getOrders() {
     const res = await fetch(`${BASE_URL}/api/v1/orders/getAll`);

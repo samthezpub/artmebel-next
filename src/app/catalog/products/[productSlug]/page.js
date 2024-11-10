@@ -2,12 +2,31 @@ import React from 'react'
 import './products.scss'
 import Image from "next/image";
 import ProductImageSlider from "../../../../Components/ProductImageSlider";
-import {BASE_URL} from "../../../../../config";
+import {BASE_URL} from "../../../../config";
 import SimilarProducts from "./SimilarProducts";
 import FavouriteProductSlug from "../../../../Components/FavouriteProductSlug";
 import CartProductSlug from "../../../../Components/CartProductSlug";
 import { redirect } from 'next/navigation'
 import Link from "next/link";
+
+export async function generateMetadata({ params, searchParams }, parent) {
+    // read route params
+    const productSlug = (await params).productSlug
+    console.log("Категорислюг:" + productSlug)
+
+    // fetch data
+    const product = await fetch(`${BASE_URL}/api/v1/catalog/get/${productSlug}`).then(response => {return response.json();});
+
+
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent).openGraph?.images || []
+
+    return {
+        title: `${product.titleSEO}`,
+        description: `${product.descriptionSEO}`,
+        keywords: `${product.keywords}`,
+    }
+}
 
 export default async function Page({params}) {
 

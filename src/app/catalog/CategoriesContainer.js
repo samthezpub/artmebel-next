@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useState} from 'react'
-import {BASE_URL} from "../../../config";
+import {BASE_URL} from "../../config";
 import Link from "next/link";
 
 async function getSuperCategories() {

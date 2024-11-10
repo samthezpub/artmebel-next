@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../../../config";
+import { BASE_URL } from "../../../../../config";
 import "./Create.scss"; // Подключаем обычный SCSS файл без модулей
 
 export default function EditPage({params}) {
@@ -54,7 +54,7 @@ export default function EditPage({params}) {
         });
 
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/catalog/update/${productId}`, {
+            const response = await fetch(`${BASE_URL}/api/v1/catalog/update/${productId}`, {
                 method: "PUT",
                 body: data,
             });

@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import './Footer.scss'
 import SearchProducts from "../Components/SearchProducts";
-import BurgerModal from "@/Components/BurgerModal";
-import Burger from "@/Components/Burger";
+import Burger from "../Components/Burger";
 
 
 

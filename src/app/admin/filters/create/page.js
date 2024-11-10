@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../../config";
+import { BASE_URL } from "../../../../config";
 import './filtersCreate.scss';
 
 export default function Page() {
@@ -73,7 +73,7 @@ export default function Page() {
         console.log("Отправляемые данные:", formData);
 
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/filters/create`, {
+            const response = await fetch(`${BASE_URL}/api/v1/filters/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

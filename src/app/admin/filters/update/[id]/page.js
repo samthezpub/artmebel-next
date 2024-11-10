@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../../../config";
+import { BASE_URL } from "../../../../../config";
 import './filterUpdate.scss';
 
 export default function Page({ filterId }) {

@@ -1,7 +1,8 @@
 import React from 'react';
+import {BASE_URL} from "../../../config";
 
 async function getFilters() {
-    return await fetch("http://localhost:8080/api/v1/category/get-all").then(res => res.json());
+    return await fetch(`${BASE_URL}/api/v1/category/get-all`).then(res => res.json());
 }
 
 export default async function Page() {

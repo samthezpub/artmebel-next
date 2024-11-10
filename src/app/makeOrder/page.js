@@ -7,7 +7,7 @@ import ProductImageSlider from "../../Components/ProductImageSlider";
 import CartItems from "../../Components/CartItems";
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import {BASE_URL} from "../../../config";
+import {BASE_URL} from "../../config";
 
 export default function Page() {
     const [userType, setUserType] = useState("phisLico");
@@ -54,7 +54,7 @@ export default function Page() {
         };
 
         try {
-            const response = await axios.post(`http://localhost:8080/api/v1/cart-order/create`, orderData);
+            const response = await axios.post(`${BASE_URL}/api/v1/cart-order/create`, orderData);
             alert("Заказ успешно создан!");
             localStorage.removeItem("cart"); // Очищаем корзину
             setCartItems([]); // Обновляем состояние для отображения пустой корзины

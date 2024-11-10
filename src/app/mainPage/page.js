@@ -3,7 +3,7 @@ import './mainPage.scss'
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import RunString from "@/Components/RunString";
+import RunString from "../../Components/RunString";
 
 
 const Carousel = dynamic(() => import('../../Components/Carousel'), { ssr: false })

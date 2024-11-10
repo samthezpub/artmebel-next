@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 
 import './SearchProducts.scss'
-import {BASE_URL} from "../../config";
+import {BASE_URL} from "../config";
 import Link from "next/link";
 
 export default function SearchProducts() {

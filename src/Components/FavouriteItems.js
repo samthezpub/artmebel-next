@@ -1,8 +1,8 @@
 "use client"
 import React, {useEffect, useState} from 'react'
 import Image from "next/image";
-import ProductImageSlider from "@/Components/ProductImageSlider";
-import {BASE_URL} from "../../config";
+import ProductImageSlider from "./ProductImageSlider";
+import {BASE_URL} from "../config";
 
 export default function FavouriteItems() {
     const [products, setProducts] = useState([]);

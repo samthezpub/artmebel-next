@@ -4,12 +4,15 @@ import Link from 'next/link'
 
 import './Catalog.scss';
 
-import {BASE_URL} from "../../../config";
+import {BASE_URL} from "../../config";
 import CategoriesContainer from "./CategoriesContainer";
 
 async function getSuperCategories() {
     return await fetch(`${BASE_URL}/api/v1/supercategory/getAll`).then(res => res.json())
 }
+
+
+
 
 export default async function Page() {
 
@@ -19,7 +22,7 @@ export default async function Page() {
         <div className="catalog">
             <div className="container">
                 <div className="pagination">
-                <p><Link href="/">Главная/</Link><span className="active">Категории</span></p>
+                <p><Link href="/">Главная/</Link><span className="active">Каталог</span></p>
                 </div>
                 <div className="header">
                     <h1>Каталог</h1>
