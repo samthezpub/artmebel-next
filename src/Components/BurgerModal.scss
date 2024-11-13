@@ -1,0 +1,81 @@
+@import "./../app/globals";
+
+.forMobile {
+  .burger{
+    cursor: pointer;
+  }
+
+  .burger-modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* см. ниже */
+    align-items: center;
+    z-index: 99;
+    /* Чтобы окно не прилипало к границе
+    браузера установим отступы */
+    padding: 30px 0;
+
+    background: white;
+
+    display: none;
+
+    .logo{
+      margin-bottom: 5px;
+
+      @media screen and (min-width: 840px) {
+        width: 100% !important;
+        height: 250px !important;
+      }
+    }
+
+    .forButton {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+
+      .button {
+        width: 100%;
+
+        background-image: url("/furnitureForOrder/button.jpg");
+        border-radius: 60px;
+        height: 50px;
+        border: 0;
+        font-family: $main-font;
+        font-size: 30px;
+        font-weight: 500;
+        color: $accent-color;
+        background-position: left;
+        text-align: center;
+        cursor: pointer;
+        margin-bottom: 20px;
+
+
+      }
+    }
+
+    .cross{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      border: 0;
+      background: none;
+
+      z-index: 9;
+
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    display: flex;
+  }
+}

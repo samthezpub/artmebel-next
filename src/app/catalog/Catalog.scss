@@ -1,12 +1,27 @@
 @import "../_globals";
 
 .catalog{
+  padding-left: 98px;
 
+  .container{
+    min-height: 600px;
+  }
 
   .header{
     font-size: 1.5em;
     font-weight: 500;
     color: $accent-color;
+  }
+  .pagination{
+    font-family: $main-font;
+    color: $accent-color;
+    font-size: 18px;
+    margin-bottom: 49px;
+    margin-top: 99px;
+
+    .active{
+      font-weight: bold;
+    }
   }
 
   .categories_container{
@@ -24,11 +39,14 @@
 
     .categories{
       width: 200px;
-
+      min-height: 300px;
       margin-left: -10px;
       padding-right: 20px;
       border-right: 1px solid $accent-color;
 
+      .supercategory{
+        cursor: pointer;
+      }
       ul{
         li{
           position: relative;
@@ -52,7 +70,7 @@
             display: block;
             width: 50%;
             height: 1px;
-            background-image: url("../../../public/divider_catalog.svg");
+            background-image: url("/divider_catalog.svg");
             background-position: top center;
 
             margin-top: 10px;
@@ -96,5 +114,34 @@
       }
     }
 
+  }
+}
+
+// Медиазапросы для адаптивного отображения
+@media (max-width: 1150px) {
+  .catalog {
+    padding-left: 50px;
+    .categories_container {
+      .categories{
+        padding-right: 10px;
+      }
+      .subcategories-container {
+        .subcategories {
+          grid-template-columns: repeat(2, 1fr); // 2 колонки на экранах меньше 1000px
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .catalog {
+    .categories_container {
+      .subcategories-container {
+        .subcategories {
+          grid-template-columns: 1fr; // 1 колонка на экранах меньше 600px
+        }
+      }
+    }
   }
 }

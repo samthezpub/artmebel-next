@@ -1,0 +1,56 @@
+@import "../_globals.scss";
+
+.containerForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 123px;
+  padding-bottom: 50px;
+
+  form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    input{
+      width: 398px;
+      height: 28px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding-left: 10px;
+    }
+    button{
+      background-image: url("/furnitureForOrder/button.jpg");
+      border-radius: 60px;
+      height: 78px;
+      border: 0;
+      font-family: $main-font;
+      font-size: 48px;
+      color: $accent-color;
+      background-position: left;
+      text-align: center;
+      cursor: pointer;
+      width: 322px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .containerForm{
+    form{
+      width: 80%;
+      button{
+        width: 100%;
+        font-size: 35px;
+      }
+
+      input{
+        width: 90%;
+      }
+    }
+  }
+}

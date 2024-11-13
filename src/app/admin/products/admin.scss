@@ -1,0 +1,77 @@
+@import "../../_globals.scss";
+
+#admin {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 15px;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .productTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    thead {
+      background-color: #ddd;
+
+      th {
+        padding: 10px;
+        font-weight: bold;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        td {
+          padding: 8px;
+          border-bottom: 1px solid #ddd;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+
+  .picture {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    flex-shrink: 0; // Предотвращает изменение размера
+  }
+
+  .name, .price, .category, .subcategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $main-font;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    width: 150px; // Фиксированная ширина для выравнивания
+    overflow: hidden;
+    text-overflow: ellipsis; // Обрезка длинного текста с многоточием
+    white-space: nowrap; // Запрещаем перенос текста
+  }
+
+  .icon {
+    display: flex;
+    gap: 10px; // Отступ между иконками
+  }
+
+  .ForAddition {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+}
