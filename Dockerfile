@@ -13,6 +13,7 @@ RUN npm install
 
 # Копируем весь код из директории src в контейнер
 COPY src ./
+COPY public ./public
 
 # Сборка приложения
 RUN npm run build

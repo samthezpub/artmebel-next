@@ -13,7 +13,7 @@ export default function RunString({dir, length, width, height}) {
     return (
         <Marquee className="marquee" pauseOnHover={true}>
             {partners.map((item, index) => (
-                <Image loading={"lazy"} src={`/${dir}/${index}.png`} width={width} height={height} />
+                <Image key={index} loading={"lazy"} src={`/${dir}/${index}.png`} width={width} height={height} />
             ))}
 
         </Marquee>
