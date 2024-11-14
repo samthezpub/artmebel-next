@@ -90,7 +90,7 @@ export default function SimilarProducts({categoryId, currentProductId}) {
 
     return (
         <div className="slider-container">
-            <Image className="prev-btn" onClick={handlePrev} src={"/catalog/categorySlug/left-arr.png"} width={33} height={40} />
+            {/*<Image className="prev-btn" onClick={handlePrev} src={"/catalog/categorySlug/left-arr.png"} width={33} height={40} />*/}
 
             <div className="slider-wrapper">
                 <div
@@ -116,7 +116,7 @@ export default function SimilarProducts({categoryId, currentProductId}) {
                 </div>
             </div>
 
-            <Image className="next-btn" onClick={handleNext} src={"/catalog/categorySlug/right-arr.png"} width={33} height={40} />
+            {/*<Image className="next-btn" onClick={handleNext} src={"/catalog/categorySlug/right-arr.png"} width={33} height={40} />*/}
         </div>
     );
 }

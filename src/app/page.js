@@ -25,12 +25,12 @@ export default function Page() {
                 <h1>ТОЛЬКО ЛУЧШАЯ МЕБЕЛЬ
                 </h1>
                 <div className="forButton">
-                  <button>КАТАЛОГ</button>
-                  <button>РАСПРОДАЖА</button>
-                  <button>АКЦИЯ</button>
-                  <button>НОВИНКИ</button>
-                  <button>УЦЕНКА</button>
-                  <button>ХИТ</button>
+                  <Link href="catalog" className="button">КАТАЛОГ</Link>
+                  <Link href="furnitureForOrder" className="button">НА ЗАКАЗ</Link>
+                  <Link href="./status" className="button">СТАТУС ЗАКАЗА</Link>
+                  <Link href="/#about" className="button">О КОМПАНИИ</Link>
+                  <Link href="/#contacts" className="button">КОНТАКТЫ</Link>
+
                 </div>
               </div>
               <div className="rightPart">
@@ -63,7 +63,7 @@ export default function Page() {
               <div className="carousel">
                 <RunString dir={"mainPage/mebel"} length={3} width={591} height={480}></RunString>
               </div>
-              <Link href="/makeOrder">
+              <Link href="/furnitureForOrder">
                 <button>ЗАКАЗАТЬ</button>
               </Link>
 

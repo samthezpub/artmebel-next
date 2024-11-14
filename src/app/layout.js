@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
             <div className="footer-container">
                 <div className="info">
                     <Link href="/">
-                        <Image src="/logo.svg" width="200" height="100" alt=""/>
+                        <Image src="/logoFooter.svg" width="200" height="100" alt=""/>
                     </Link>
 
 
@@ -206,7 +206,7 @@ export default function RootLayout({ children }) {
             <div className="footer-mobile">
                 <div className="container">
                     <div className="logo">
-                        <Image src="/logo.png" alt="logo" width="150" height="80"/>
+                        <Image src="/logoFooter.svg" alt="logo" width="150" height="80"/>
                     </div>
                     <div className="forForm">
 
