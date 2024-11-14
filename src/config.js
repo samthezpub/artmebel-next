@@ -1,3 +1,2 @@
-export const BASE_URL = process.env.NODE_ENV === 'production'
-    ? "https://samthezpub-mebelshik-1b40.twc1.net"
-    : "http://backend:8080";
+
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ? process.env.NEXT_PUBLIC_BASE_URL : 'http://backend:8080';
