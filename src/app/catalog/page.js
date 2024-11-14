@@ -7,16 +7,11 @@ import './Catalog.scss';
 import {BASE_URL} from "../../config";
 import CategoriesContainer from "./CategoriesContainer";
 
-async function getSuperCategories() {
-    return await fetch(`${BASE_URL}/api/v1/supercategory/getAll`).then(res => res.json())
-}
-
 
 
 
 export default async function Page() {
 
-    let superCategories = await getSuperCategories();
 
     return (
         <div className="catalog">
