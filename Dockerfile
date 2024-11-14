@@ -27,17 +27,10 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV HOSTNAME="0.0.0.0"
 
-# Создаем группу и пользователя
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
 
 # Копируем необходимые файлы из builder stage
 COPY --from=builder /app/ ./
 
-# Устанавливаем права на .next директорию
-RUN chown -R nextjs:nodejs .next
-
-USER nextjs
 
 EXPOSE 3000
 
