@@ -3,7 +3,7 @@ import {BASE_URL} from "../../../config";
 
 async function getFilters() {
     console.log(BASE_URL);
-    const response = await fetch(`${BASE_URL}/api/v1/category/get-all`);
+    const response = await fetch(`https://samthezpub-mebelshik-1b40.twc1.net/api/v1/category/get-all`);
 
     // Проверяем, что запрос успешен (статус 200-299)
     if (!response.ok) {

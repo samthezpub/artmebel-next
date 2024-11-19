@@ -26,7 +26,6 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV HOSTNAME="0.0.0.0"
-ENV NEXT_PUBLIC_BASE_URL="http://backend:8080"
 
 
 # Копируем необходимые файлы из builder stage

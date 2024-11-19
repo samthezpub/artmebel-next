@@ -104,8 +104,8 @@ export default function RootLayout({ children }) {
                         <p>Наши социальные сети:</p>
 
                         <ul>
-                            <li><a href="#"><Image src="/footer/vk.png" width="48" height="48" alt="vk"/></a></li>
-                            <li><a href="#"><Image src="/footer/tg.png" width="48" height="48" alt="telegram"/></a></li>
+                            <li><a href="https://vk.com/mebelartstudio"><Image src="/footer/vk.png" width="48" height="48" alt="vk"/></a></li>
+                            <li><a href="https://t.me/furnitura52"><Image src="/footer/tg.png" width="48" height="48" alt="telegram"/></a></li>
 
                         </ul>
                     </div>
@@ -116,15 +116,15 @@ export default function RootLayout({ children }) {
                         </div>
 
                         <div>
-                            <p>+7 (949) 000-00-00</p>
+                            <p>+7 (949) 704-98-71</p>
                         </div>
 
                         <div>
-                            <p>С 09:00 до 17:00<br/>СБ,ВС – Выходные</p>
+                            <p>С 09:00 до 17:00<br/>ВС – Выходной</p>
                         </div>
                         <div>
-                            <p>ИП 1111111111111<br/>
-                                ОГРН 111111111111111</p>
+                            <p>ИНН 1111111111111<br/>
+                                ОГРНИП 324930100065264</p>
                         </div>
                     </div>
                 </div>
@@ -208,11 +208,7 @@ export default function RootLayout({ children }) {
                     <div className="logo">
                         <Image src="/logoFooter.svg" alt="logo" width="150" height="80"/>
                     </div>
-                    <div className="forForm">
 
-                        <SearchProducts/>
-
-                    </div>
                     <div className="text">
                         <div className="Line1">
                             <p>Главная</p>
@@ -239,12 +235,12 @@ export default function RootLayout({ children }) {
                     </div>
                     <div className="contacts">
                         <div className="phone">
-                            <h1>+7 (949) 000-00-00</h1>
+                            <h1>+7 (949) 704-98-71</h1>
                             <p>Для звонков по России</p>
                         </div>
                         <div className="day">
                             <p>ПН-СБ – с 09:00 до 17:00</p>
-                            <p>СБ,ВС – Выходные</p>
+                            <p>ВС – Выходной</p>
                         </div>
                         <div className="map">
                             <div>
@@ -264,9 +260,9 @@ export default function RootLayout({ children }) {
                                 находящихся на территории Российской Федерации.</p>
                         </div>
                         <div className="social-media">
-                            <Link href="/"><Image src="/footer/vk.png" alt="/" width="48" height="48"
+                            <Link href="https://vk.com/mebelartstudio"><Image src="/footer/vk.png" alt="vk" width="48" height="48"
                                                   style={{marginRight: "32px"}}/></Link>
-                            <Link href="/"><Image src="/footer/tg.png" alt="/" width="48" height="48"/></Link>
+                            <Link href="https://t.me/furnitura52"><Image src="/footer/tg.png" alt="telegram" width="48" height="48"/></Link>
                         </div>
                     </div>
                     <div className="lastContainer">
@@ -275,7 +271,7 @@ export default function RootLayout({ children }) {
                         </div>
                         <div className="INN">
                             <p>ИНН: 123456789012</p>
-                            <p>ОГРНИП: 123456789012345</p>
+                            <p>ОГРНИП: 324930100065264</p>
                         </div>
                         <div className="IP">
                             <p>© ИП «Art Mebel», 2024</p>

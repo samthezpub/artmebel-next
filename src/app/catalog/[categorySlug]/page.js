@@ -37,8 +37,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 export default async function Page({ params }) {
-    const category = await getCategoryByCategorySlug(params.categorySlug);
-    const products = await getProductsByCategorySlug(params.categorySlug);
+    const category = await getCategoryByCategorySlug(await params.categorySlug);
+    const products = await getProductsByCategorySlug(await params.categorySlug);
 
     return (
         <section id="categoryProducts">
