@@ -77,6 +77,7 @@
       }
 
     }
+
     p{
       font-size: 15px;
       font-weight: 400;
@@ -113,7 +114,18 @@
   #products {
 
     .text {
-      width: max-content;
+      text-align: center;
+      width: 100%;
+      align-items: center;
+
+    h1{
+      width: 90%;
+    }
+      .description{
+width: 90%;
+      }
+
+
     }
 
     .similar-products .slider-container .next-btn {

@@ -21,11 +21,10 @@ export default function BurgerModal({isModalOpen, onClose}) {
             </Link>
             <div className="forButton">
                 <Link className="button" onClick={handleClose} href={"/catalog"}>КАТАЛОГ</Link>
-                <Link className="button" onClick={handleClose} href={"/"}>РАСПРОДАЖА</Link>
-                <Link className="button" onClick={handleClose} href={"/"}>АКЦИЯ</Link>
-                <Link className="button" onClick={handleClose} href={"/"}>НОВИНКИ</Link>
-                <Link className="button" onClick={handleClose} href={"/"}>УЦЕНКА</Link>
-                <Link className="button" onClick={handleClose} href={"/"}>ХИТ</Link>
+                <Link className="button" onClick={handleClose} href={"/furnitureForOrder"}>НА ЗАКАЗ</Link>
+                <Link className="button" onClick={handleClose} href={"/status"}>СТАТУС ЗАКАЗА</Link>
+                <Link className="button" onClick={handleClose} href={"/#about"}>О КОМПАНИИ</Link>
+                <Link className="button" onClick={handleClose} href={"/#contacts"}>КОНТАКТЫ</Link>
             </div>
 
             <button className="cross" onClick={() => {

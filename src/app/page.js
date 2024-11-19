@@ -6,7 +6,6 @@ import Link from "next/link";
 import RunString from "../Components/RunString";
 
 
-const Carousel = dynamic(() => import('../Components/Carousel'), { ssr: false })
 
 export const metadata = {
   title: 'Мебель в Мариуполе купить готовую и на заказ в интернет-магазине "ArtMebel"',
@@ -77,13 +76,13 @@ export default function Page() {
               <div className="info">
                 <div className="telephone">
                   <p style={{marginBottom: "20px"}} className="noneMobile">г. Мариуполь, ул. Энгельса, 56</p>
-                  <h2 style={{marginBottom: "10px"}}>+7 (949) 000-00-00</h2>
+                  <h2 style={{marginBottom: "10px"}}>+7 (949) 704-98-71</h2>
                   <p style={{marginBottom: "20px", color: "#E3E3E3"}}>Для звонков по России</p>
-                  <p>ПН-ПТ – 09:00 до 17:00</p>
-                  <p style={{marginBottom: "20px"}}>СБ,ВС – Выходные</p>
+                  <p>ПН-СБ – 09:00 до 17:00</p>
+                  <p style={{marginBottom: "20px"}}>ВС – Выходной</p>
                   <div className="social">
-                    <Link href="/"><Image src="/mainPage/vk.svg" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
-                    <Link href="/"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80" /></Link>
+                    <Link href="https://t.me/furnitura52"><Image src="/mainPage/vk.svg" alt="/" width="80" height="80" style={{marginRight: "20px"}} /></Link>
+                    <Link href="https://t.me/furnitura52"><Image src="/mainPage/tg.svg" alt="/" width="80" height="80" /></Link>
                   </div>
                 </div>
                 <div className="map">

@@ -38,9 +38,9 @@ export default function Page() {
                 data.append("file", formData.file[i]);
             }
         }
-        Object.entries(formData.filters).forEach(([key, value]) => {
-            data.append(`filters[${key}]`, value);
-        });
+        if (Object.keys(formData.filters).length > 0) {
+            data.append("filters", JSON.stringify(formData.filters));
+        }
 
         try {
             const response = await fetch(`${BASE_URL}/api/v1/catalog/create`, {
@@ -130,9 +130,9 @@ export default function Page() {
                 {filters.map(filter => (
                     <div key={filter.id} className="filter">
                         <label>{filter.filterType}</label>
-                        <select name={filter.filterType} onChange={(e) => handleFilterChange(filter.filterType, e.target.value)} className="filterSelect">
+                        <select name={filter.filterType} onChange={(e) => handleFilterChange(filter.id, e.target.value)} className="filterSelect">
                             {filter.values.map(value => (
-                                <option key={value} value={value}>{value}</option>
+                                <option key={value.id} value={value.id}>{value}</option>
                             ))}
                         </select>
                     </div>

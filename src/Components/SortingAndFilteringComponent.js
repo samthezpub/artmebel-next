@@ -111,10 +111,10 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
 
                         <ProductImageSlider productSlug={product.slug}
                                             imagesCount={product.photosCount}></ProductImageSlider>
-                        <Link href={`/catalog/products/${product.slug}`}>
+                        <Link href={`/catalog/products/${product.slug}`} style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <p className="price">{product.price} ₽</p>
                         </Link>
-                        <Link href={`/catalog/products/${product.slug}`}>
+                        <Link href={`/catalog/products/${product.slug}`} style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <h3 className="name">{product.name}</h3>
                         </Link>
                         <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>

@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../../config";
+import React, {useEffect, useState} from "react";
+import {BASE_URL} from "../../../../config";
 import './similarProducts.scss';
 import Image from "next/image";
 import ProductImageSlider from "../../../../Components/ProductImageSlider";
+import Link from "next/link";
 
 export default function SimilarProducts({categoryId, currentProductId}) {
     const [product, setProduct] = useState(currentProductId)
@@ -46,7 +47,7 @@ export default function SimilarProducts({categoryId, currentProductId}) {
         try {
             let response = await fetch(
                 `${BASE_URL}/api/v1/catalog/category/${category_id}/get-all`,
-                { cache: "force-cache" }
+                {cache: "force-cache"}
             );
             if (!response.ok) {
                 throw new Error(`Ошибка сети: ${response.status}`);
@@ -95,22 +96,27 @@ export default function SimilarProducts({categoryId, currentProductId}) {
             <div className="slider-wrapper">
                 <div
                     className="slider"
-                    style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
+                    style={{transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`}}
                 >
                     {similarProducts.map((product) => (
                         <div className="product" key={product.id}>
                             <div className="heart-container" onClick={() => addToFavorite(product.id)}>
                                 <Image className="heart-outline" src={"/catalog/categorySlug/like.svg"}
-                                       alt={"Добавить в избранное"} width={40} height={40} />
+                                       alt={"Добавить в избранное"} width={40} height={40}/>
                                 <Image className="like-filled" src={"/catalog/categorySlug/like-fill.svg"}
-                                       alt={"Добавить в избранное"} width={40} height={40} />
+                                       alt={"Добавить в избранное"} width={40} height={40}/>
                             </div>
-                            <ProductImageSlider productSlug={product.slug} imagesCount={product.photosCount} />
-                            <p className="price">{product.price} ₽</p>
-                            <h3 className="name">{product.name}</h3>
-                            <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} />
-                            <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}
-                                   onClick={() => addToCart(product.id)} />
+                            <ProductImageSlider productSlug={product.slug} imagesCount={product.photosCount}/>
+                            <Link href={`/catalog/products/${product.slug}`}>
+                                <p className="price">{product.price} ₽</p>
+                            </Link>
+                            <Link href={`/catalog/products/${product.slug}`}>
+                                <h3 className="name">{product.name}</h3>
+                            </Link>
+                            <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>
+                            <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36}
+                                   height={36}
+                                   onClick={() => addToCart(product.id)}/>
                         </div>
                     ))}
                 </div>
