@@ -43,8 +43,8 @@ export default function ProductImageSlider({ productSlug, imagesCount }) {
 
             <Image
                 src={getImageUrl(productSlug, currentImage)}
-                width={170}  // Можешь изменить ширину и высоту по необходимости
-                height={183}
+                width={120}  // Можешь изменить ширину и высоту по необходимости
+                height={133}
                 alt={`Картинка продукта номер ${currentImage}`}
                 className="photoProduct"
             />

@@ -77,7 +77,7 @@ export default async function Page({params}) {
                                 <FavouriteProductSlug productID={product.id}></FavouriteProductSlug>
                                 </div>
                             </div>
-                            <p>{product.description}</p>
+                            <p className="description">{product.description}</p>
                             <div className="price">
                                 <h1>{product.price} ₽</h1>
                                 <Image src="/products/Line.png" height="4" width="500" alt="/"/>
