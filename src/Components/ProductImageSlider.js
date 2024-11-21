@@ -42,7 +42,7 @@ export default function ProductImageSlider({ productSlug, imagesCount }) {
 
 
             <Image
-                src={getImageUrl(productSlug, currentImage)}
+                src={`https://d2197f97-art-mebel.s3.timeweb.cloud/${productSlug}_${currentImage}.jpg`}
                 width={120}  // Можешь изменить ширину и высоту по необходимости
                 height={133}
                 alt={`Картинка продукта номер ${currentImage}`}
