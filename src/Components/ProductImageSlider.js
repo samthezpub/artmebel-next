@@ -42,7 +42,7 @@ export default function ProductImageSlider({ productSlug, imagesCount }) {
 
 
             <Image
-                src={`https://d2197f97-art-mebel.s3.timeweb.cloud/${productSlug}_${currentImage}.jpg`}
+                src={`https://d2197f97-art-mebel.s3.timeweb.cloud/lex-edm-040-wh-elektricheskaya-dukhovka_2.jpg`}
                 width={120}  // Можешь изменить ширину и высоту по необходимости
                 height={133}
                 alt={`Картинка продукта номер ${currentImage}`}
