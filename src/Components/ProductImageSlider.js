@@ -5,6 +5,9 @@ import Image from "next/image";
 import './ProductImageSlider.scss';
 import Link from "next/link";
 
+const customLoader = ({ src }) => {
+    return src; // Возвращаем исходный URL без обработки
+};
 
 export default function ProductImageSlider({ productSlug, imagesCount }) {
     const [currentImage, setCurrentImage] = useState(1);
@@ -42,6 +45,7 @@ export default function ProductImageSlider({ productSlug, imagesCount }) {
 
 
             <Image
+                loader={customLoader}
                 src={`https://d2197f97-art-mebel.s3.timeweb.cloud/lex-edm-040-wh-elektricheskaya-dukhovka_2.jpg`}
                 width={120}  // Можешь изменить ширину и высоту по необходимости
                 height={133}
