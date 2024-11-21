@@ -1,7 +1,6 @@
 import React from 'react'
 import './mainPage/mainPage.scss'
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import RunString from "../Components/RunString";
 
