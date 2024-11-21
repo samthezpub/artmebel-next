@@ -46,7 +46,7 @@ export default function ProductImageSlider({ productSlug, imagesCount }) {
 
             <Image
                 loader={customLoader}
-                src={`https://d2197f97-art-mebel.s3.timeweb.cloud/lex-edm-040-wh-elektricheskaya-dukhovka_2.jpg`}
+                src={getImageUrl(productSlug, currentImage)}
                 width={120}  // Можешь изменить ширину и высоту по необходимости
                 height={133}
                 alt={`Картинка продукта номер ${currentImage}`}
