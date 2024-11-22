@@ -5,6 +5,7 @@ import Link from "next/link";
 import './Footer.scss'
 import SearchProducts from "../Components/SearchProducts";
 import Burger from "../Components/Burger";
+import YandexMetrikaContainer from "../Components/YandexMetrikaContainer";
 
 
 
@@ -282,6 +283,7 @@ export default function RootLayout({ children }) {
             </div>
         </div>
     </footer>
+    <YandexMetrikaContainer enabled={true}></YandexMetrikaContainer>
     </body>
     </html>
   );
