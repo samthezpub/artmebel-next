@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://art-mebel.com.ru/sitemap.xml
