@@ -9,6 +9,12 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import {BASE_URL} from "../../config";
 
+export const metadata = {
+    title: 'Корзина в интернет-магазине "ArtMebel"',
+    description: 'Ваша корзина в интернет магазине ArtMebel в Мариуполе',
+    keywords: ''
+}
+
 export default function Page() {
     const [userType, setUserType] = useState("phisLico");
     const [formData, setFormData] = useState({
