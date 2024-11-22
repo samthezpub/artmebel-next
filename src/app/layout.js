@@ -7,7 +7,11 @@ import SearchProducts from "../Components/SearchProducts";
 import Burger from "../Components/Burger";
 import YandexMetrikaContainer from "../Components/YandexMetrikaContainer";
 
-
+export const metadata = {
+    other: {
+        ['yandex-verification']: '1a41da2105ba63ed',
+    },
+}
 
 
 export default function RootLayout({ children }) {
