@@ -128,7 +128,7 @@ export default function RootLayout({ children }) {
                             <p>С 09:00 до 17:00<br/>ВС – Выходной</p>
                         </div>
                         <div>
-                            <p>ИНН 1111111111111<br/>
+                            <p>ИНН 123456789012<br/>
                                 ОГРНИП 324930100065264</p>
                         </div>
                     </div>
