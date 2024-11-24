@@ -2,6 +2,7 @@ import {BASE_URL} from "../config";
 
 export default async function sitemap() {
     const baseUrl = BASE_URL;
+    const url = "https://art-mebel.com.ru";
 
     // Загружаем категории и товары (из API, базы данных или где ты их хранишь)
     const categories = await fetch(`${baseUrl}/api/v1/category/get-all`).then((res) => res.json());
@@ -9,23 +10,23 @@ export default async function sitemap() {
 
     // Основные страницы сайта
     const staticPages = [
-        { url: '/', lastModified: new Date().toISOString() },
-        { url: '/catalog', lastModified: new Date().toISOString() },
-        { url: '/furnitureForOrder', lastModified: new Date().toISOString() },
-        { url: '/status', lastModified: new Date().toISOString() },
-        { url: '/makeOrder', lastModified: new Date().toISOString() },
-        { url: '/favourite', lastModified: new Date().toISOString() },
+        { url: `${url}/`, lastModified: new Date().toISOString() },
+        { url: `${url}/catalog`, lastModified: new Date().toISOString() },
+        { url: `${url}/furnitureForOrder`, lastModified: new Date().toISOString() },
+        { url: `${url}/status`, lastModified: new Date().toISOString() },
+        { url: `${url}/makeOrder`, lastModified: new Date().toISOString() },
+        { url: `${url}/favourite`, lastModified: new Date().toISOString() },
     ];
 
     // Страницы категорий
     const categoryPages = categories.map((category) => ({
-        url: `/catalog/${category.slug}`,
+        url: `${url}/catalog/${category.slug}`,
         lastModified: new Date(Date.now()).toISOString(),
     }));
 
     // Страницы товаров
     const productPages = products.map((product) => ({
-        url: `/catalog/products/${product.slug}`,
+        url: `${url}/catalog/products/${product.slug}`,
         lastModified: new Date(Date.now()).toISOString(),
     }));
 
