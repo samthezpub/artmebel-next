@@ -70,6 +70,8 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
 
         const filteredProducts = initialProducts.filter((product) => {
             return updatedFilters.every((filter) => {
+                console.log(filter)
+                console.log(product)
                 return product.productFilters.some(
                     (productFilter) =>
                         productFilter.filter.id === filter.filterId &&
