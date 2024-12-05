@@ -58,7 +58,7 @@ export default function FurnitureForOrderComp() {
             </div>
             <div id={"furnitureForOrder"}>
                 <div className="Order">
-                    <h1>Заказать мебель</h1>
+                    <h1>Мебель на заказ</h1>
                     <form onSubmit={handleSubmit}>
                         <input name="name" value={formData.name} onChange={handleChange} placeholder="Имя:" />
                         <input name="phone" value={formData.phone} onChange={handleChange} placeholder="Телефон:" />

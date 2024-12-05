@@ -25,6 +25,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
     // fetch data
     const category = await getCategoryByCategorySlug(categorySlug)
+    console.log(category)
 
     // optionally access and extend (rather than replace) parent metadata
     const previousImages = (await parent).openGraph?.images || []
