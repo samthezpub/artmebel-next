@@ -18,10 +18,13 @@ function sortProducts(products, sortType) {
     }
 }
 
-const SortingAndFilteringComponent = ({initialProducts, filters}) => {
+const SortingAndFilteringComponent = ({initialProducts, filters, currentCategory}) => {
     const [products, setProducts] = useState(initialProducts);
     const [sortType, setSortType] = useState("default");
     const [activeFilters, setActiveFilters] = useState([]);
+
+    let currentCategoryProducts = [];
+    let subcategoryProducts = [];
 
     const addToCart = (productId) => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -59,24 +62,42 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
         setProducts(sortProducts(products, selectedSortType));
     };
 
-    const handleFilterChange = (filterId, value) => {
+    const handleFilterChange = (filterId, value, filterType) => {
         const updatedFilters = activeFilters.filter((filter) => filter.filterId !== filterId);
 
         if (value) {
-            updatedFilters.push({filterId, value});
+            updatedFilters.push({filterId, value,filterType});
         }
 
         setActiveFilters(updatedFilters);
+
+
 
         const filteredProducts = initialProducts.filter((product) => {
             return updatedFilters.every((filter) => {
                 console.log(filter)
                 console.log(product)
-                return product.productFilters.some(
-                    (productFilter) =>
-                        productFilter.filter.id === filter.filterId &&
-                        productFilter.value === filter.value
-                );
+                console.log(product.category.name)
+                if (product.category.name === currentCategory.name)
+                {
+                    return product.productFilters.some(
+                        (productFilter) =>
+                            productFilter.filter.id === filter.filterId &&
+                            productFilter.value === filter.value
+                    );
+
+                }
+                else {
+                    return product.productFilters.some((productFilter) => {
+                        console.log("меня вызвали");
+                        console.log("Продф", productFilter, "фильтр", filter);
+                        return (
+                            productFilter.filterType === filter.filterType &&
+                            productFilter.value === filter.value
+                        );
+                    });
+                }
+
             });
         });
 
@@ -85,6 +106,18 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
 
     useEffect(() => {
         console.log(initialProducts)
+
+        initialProducts.forEach((product) => {
+            console.log(product.category.subCategories)
+            if(product.category.subCategories?.length > 0) {
+                currentCategoryProducts.push(product);
+            }
+            else {
+                subcategoryProducts.push(product);
+            }
+        });
+
+        console.info("Тек дух", currentCategoryProducts, "Под дух:" ,subcategoryProducts);
     }, []);
 
     return (
@@ -119,9 +152,9 @@ const SortingAndFilteringComponent = ({initialProducts, filters}) => {
                         <Link href={`/catalog/products/${product.slug}`} style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <h3 className="name">{product.name}</h3>
                         </Link>
-                        <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2}/>
+                        <Image className="line" src={"/catalog/categorySlug/line.png"} width={170} height={2} alt={""}/>
                         <Image className="cart-icon" src={"/catalog/categorySlug/cart.png"} width={36} height={36}
-                               onClick={() => addToCart(product.id)}/>
+                               onClick={() => addToCart(product.id)} alt={"Добавить в корзину"}/>
                     </div>
                 ))}
             </div>
