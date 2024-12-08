@@ -16,9 +16,5 @@
     "react-fast-marquee": "^1.6.5",
     "react-yandex-metrika": "^2.6.0",
     "sass": "^1.80.6"
-  },
-  "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.12"
   }
 }
