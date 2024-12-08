@@ -1,8 +1,8 @@
 "use client";
 
 const FiltersComponent = ({ filters, onFilterChange }) => {
-    const handleFilterChange = (filterId, value) => {
-        onFilterChange(filterId, value); // Передаем filterId и значение
+    const handleFilterChange = (filterId, value, filterType) => {
+        onFilterChange(filterId, value, filterType); // Передаем filterId, значение и filterType
     };
 
     return (
@@ -10,7 +10,7 @@ const FiltersComponent = ({ filters, onFilterChange }) => {
             {filters.map((filter) => (
                 <div className="filter" key={filter.id}>
                     <h3>{filter.filterType}</h3>
-                    <select onChange={(e) => handleFilterChange(filter.id, e.target.value)}>
+                    <select onChange={(e) => handleFilterChange(filter.id, e.target.value, filter.filterType)}>
                         <option value="">Выбрать...</option>
                         {filter.values.map((value, index) => (
                             <option key={index} value={value}>

@@ -62,7 +62,7 @@ export default async function Page({ params }) {
                 </div>
 
                 {/* Компонент сортировки и фильтрации */}
-                <SortingAndFilteringComponent initialProducts={products} filters={category.filters} />
+                <SortingAndFilteringComponent initialProducts={products} filters={category.filters} currentCategory={category}/>
             </div>
         </section>
     );
